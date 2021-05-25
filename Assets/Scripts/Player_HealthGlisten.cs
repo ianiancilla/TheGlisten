@@ -7,8 +7,7 @@ public class Player_HealthGlisten : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        testc;   
+          
     }
 
     // Update is called once per frame
