@@ -18,13 +18,11 @@ public class HealthDrop : MonoBehaviour
 
     // cache
     Light2D dropLight;
-    SpriteRenderer flameSprite;
 
     private void Awake()
     {
         // cache
         dropLight = GetComponentInChildren<Light2D>();
-        flameSprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -38,9 +36,9 @@ public class HealthDrop : MonoBehaviour
     {
         healthStored = healthAmount;
         dropLight.intensity = lightIntensity;
-        flameSprite.transform.localScale = new Vector3(proportionToMaxHealth * spriteVerticalSqueezing,
-                                                       proportionToMaxHealth,
-                                                       1);
+        transform.localScale = new Vector3(proportionToMaxHealth * spriteVerticalSqueezing,
+                                           proportionToMaxHealth,
+                                           1);
         
         if (decayFactor != 0f)
         {
@@ -56,12 +54,12 @@ public class HealthDrop : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        float newScale = flameSprite.transform.localScale.x 
+        float newScale = transform.localScale.x 
                             - Time.deltaTime * decayFactor;
 
-        flameSprite.transform.localScale = new Vector3(newScale,
-                                                       newScale,
-                                                       1);
+        transform.localScale = new Vector3(newScale,
+                                           newScale,
+                                           1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
