@@ -6,15 +6,19 @@ using UnityEngine.Experimental.Rendering.Universal; // to have access to Light2D
 
 public class HealthDrop : MonoBehaviour
 {
-    [Tooltip ("The scaling factor with which the light will decay. " +
-              "A score of 1 means it will lose 1 point of health per second. " +
-              "With a score of 0 it will never decay.")]
+    [Tooltip("How fast light should disappear." +
+              "A score of 1 means 1 point of health disappears every second." +
+              "A score of 2 means 2 points of health disappear each second." +
+              "With a score of 0 health does not decay.")]
     [SerializeField] float decayFactor = 1f;
 
     // member variables
     private float healthStored = 0f;
     bool isDecaying = false;
     float spriteVerticalSqueezing = 0.8f;
+    float lightDropPerSecond;
+    float xDropPerSecond;
+    float yDropPerSecond;
 
     // cache
     Light2D dropLight;
@@ -30,8 +34,8 @@ public class HealthDrop : MonoBehaviour
         if (isDecaying) { Decay(); }
     }
 
-    public void InitialiseDrop(float proportionToMaxHealth,  
-                               float healthAmount, 
+    public void InitialiseDrop(float proportionToMaxHealth,
+                               float healthAmount,
                                float lightIntensity)
     {
         healthStored = healthAmount;
@@ -39,26 +43,28 @@ public class HealthDrop : MonoBehaviour
         transform.localScale = new Vector3(proportionToMaxHealth * spriteVerticalSqueezing,
                                            proportionToMaxHealth,
                                            1);
-        
+
         if (decayFactor != 0f)
         {
             isDecaying = true;
+
+            lightDropPerSecond = (lightIntensity / healthStored) * decayFactor;
+            xDropPerSecond = (transform.localScale.x / healthStored) * decayFactor;
+            yDropPerSecond = (transform.localScale.y / healthStored) * decayFactor;
         }
     }
 
     private void Decay()
     {
-        dropLight.intensity -= Time.deltaTime * decayFactor;
+        dropLight.intensity -= Time.deltaTime * lightDropPerSecond;
+
         if (dropLight.intensity <= 0)
         {
             Destroy(this.gameObject);
         }
 
-        float newScale = transform.localScale.x 
-                            - Time.deltaTime * decayFactor;
-
-        transform.localScale = new Vector3(newScale,
-                                           newScale,
+        transform.localScale = new Vector3(transform.localScale.x - Time.deltaTime * xDropPerSecond,
+                                           transform.localScale.y - Time.deltaTime * yDropPerSecond,
                                            1);
     }
 
