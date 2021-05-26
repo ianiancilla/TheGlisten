@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private float horizontal;
     public float jumpForce;
     private float vertical;
-    private bool ladder;
     private bool climbing;
     public float climbSpeed;
     // Start is called before the first frame update
@@ -61,28 +60,20 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             climbing = true;
-
-
         }
-
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
-        {
+        {//Remove climbing and turn gravity for the player back on.
             climbing = false;
             myRgbdy.gravityScale = 1f;
-
-
         }
-
-
     }
 
    
-    }
+ }
 
 
                 
