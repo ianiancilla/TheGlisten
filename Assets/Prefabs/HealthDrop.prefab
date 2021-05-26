@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3935195166518382512}
   - component: {fileID: 3935195166518382515}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5768311434381903895}
   - component: {fileID: 5768311434381903880}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3935195167700363660}
   - component: {fileID: 3935195167700363662}
   - component: {fileID: 2591361036732200783}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: HealthDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

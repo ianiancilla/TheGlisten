@@ -1235,26 +1235,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!1 &626474852 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 432793583343141355, guid: 2433d1cdcf2956c43bf42e2c12fbc37f,
-    type: 3}
-  m_PrefabInstance: {fileID: 917205447}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &626474853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626474852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c105dd1db7bccd48a18b55835051f05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageDealt: 4
-  destroyedOnCollision: 0
 --- !u!1 &878377831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,16 +1384,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ghost
-      objectReference: {fileID: 0}
-    - target: {fileID: 432793583343141355, guid: 2433d1cdcf2956c43bf42e2c12fbc37f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 432793583343141393, guid: 2433d1cdcf2956c43bf42e2c12fbc37f,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 432793583343141397, guid: 2433d1cdcf2956c43bf42e2c12fbc37f,
         type: 3}
