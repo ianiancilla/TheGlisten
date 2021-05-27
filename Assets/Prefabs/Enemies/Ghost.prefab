@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 432793583343141396}
   - component: {fileID: 432793583343141393}
   - component: {fileID: 432793583343141398}
-  - component: {fileID: 432793583343141399}
-  - component: {fileID: 626474853}
-  m_Layer: 10
+  - component: {fileID: 1801420972}
+  m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +116,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -141,7 +140,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432793583343141355}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -154,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &432793583343141399
+--- !u!114 &1801420972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,26 +162,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 432793583343141355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e89fd46e3065c40b2aaf2f44ae04e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f9fe0fe7c73e81459d08fac64f788b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  back: {x: -3, y: 1, z: 0}
-  forth: {x: 3, y: 1, z: 0}
-  speed: 0.5
---- !u!114 &626474853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432793583343141355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c105dd1db7bccd48a18b55835051f05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageDealt: 4
-  destroyedOnCollision: 0
+  position1: {fileID: 0}
+  position2: {fileID: 0}
+  position3: {fileID: 0}
+  ghostStayLength: 3
 --- !u!1 &432793583934962881
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 432793583934962880}
   - component: {fileID: 432793583934962883}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Point Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
