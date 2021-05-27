@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ladder
   - Floor
+  - Left
+  - Right
   layers:
   - Default
   - TransparentFX
