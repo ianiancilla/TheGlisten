@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class GhostCntroller : MonoBehaviour
 {
-   
     public float speed;
     Animator myAnim;
    private bool left;
     
-
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
         myAnim = gameObject.GetComponent<Animator>();
         left = true;
-
     }
 
     // Update is called once per frame

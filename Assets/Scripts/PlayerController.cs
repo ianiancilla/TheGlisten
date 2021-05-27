@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private bool climbing;
     public float climbSpeed;
+    public bool canMove;
     // Start is called before the first frame update
     void Start()
     {
         myRgbdy = gameObject.GetComponent<Rigidbody2D>();
+        canMove = true;
 
     }
 
@@ -24,23 +26,20 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        transform.position = transform.position + new Vector3(horizontal, 0, 0) * Time.deltaTime * moveSpeed;
-
-        //This was added as for some reason the player kept having X velocity when bouncing off of things.
-        if (horizontal == 0)
+        if (canMove)
         {
-            myRgbdy.velocity = new Vector2(0, myRgbdy.velocity.y);
-        }
-
-        // Makes the player jump
+           
+            transform.position = transform.position + new Vector3(horizontal, 0, 0) * Time.deltaTime * moveSpeed;
+        
         if (Input.GetButtonDown("Jump") && (Mathf.Abs(myRgbdy.velocity.y) < 0.001f))
         {
             myRgbdy.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
-        // Makes the player able to climb ladders
-        if (climbing == true)
-        {
-            myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, vertical * Time.deltaTime * climbSpeed);
+            // Makes the player able to climb ladders
+            if (climbing == true)
+            {
+                myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, vertical * Time.deltaTime * climbSpeed);
+            }
 
         }
     }
