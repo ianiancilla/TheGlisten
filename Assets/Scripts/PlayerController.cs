@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -84,10 +85,14 @@ public class PlayerController : MonoBehaviour
             gameOver.countdown = false;
             canMove = false;
             Destroy(collision.gameObject);
+            Invoke("nextLevel", 2f);
         }
     }
 
-
+    private void nextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
 }
 
 
