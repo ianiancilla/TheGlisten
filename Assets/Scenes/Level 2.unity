@@ -384,6 +384,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83634247}
   m_CullTransparentMesh: 0
+--- !u!1 &123347475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 432793583343141355, guid: 2433d1cdcf2956c43bf42e2c12fbc37f,
+    type: 3}
+  m_PrefabInstance: {fileID: 917205447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &123347482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123347475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c105dd1db7bccd48a18b55835051f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 1
+  destroyedOnCollision: 0
 --- !u!1 &288483193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a84bb5721692314f8c84d15cb603c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerLength: 10
+  timerLength: 100
   gameOverScreen: {fileID: 892538701}
   timer: {fileID: 991642952}
   countdown: 0
@@ -1337,7 +1357,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1501,6 +1521,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: c79cb0bb5c6eab94baeeb9280d8a4c5b, type: 2}
+    - target: {fileID: 826966160, guid: 6205109dc8fa76943a2623d7bd6b8cef, type: 3}
+      propertyPath: jumpTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 826966160, guid: 6205109dc8fa76943a2623d7bd6b8cef, type: 3}
+      propertyPath: jumpForce
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7390890325832961825, guid: 6205109dc8fa76943a2623d7bd6b8cef,
         type: 3}
       propertyPath: m_Name
@@ -2774,6 +2802,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 910007164, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: destroyedOnCollision
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
       propertyPath: m_RootOrder

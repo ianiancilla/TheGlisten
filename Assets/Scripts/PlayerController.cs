@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public float climbSpeed;
     public bool canMove;
     public GameOver gameOver;
+    public float jumpTime;
+    private float jumpTimeCounter;
+    private bool isJumping;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +34,28 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         if (canMove)
         {
-           
             transform.position = transform.position + new Vector3(horizontal, 0, 0) * Time.deltaTime * moveSpeed;
         
             //Makes sure the player can only jump when they are on the ground.
         if (Input.GetButtonDown("Jump") && (Mathf.Abs(myRgbdy.velocity.y) < 0.001f))
         {
-            myRgbdy.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                //myRgbdy.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
+                myRgbdy.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter = jumpTime;
+                isJumping = true;
         }
+
+            if (Input.GetButton("Jump") && isJumping == true){
+                if (jumpTimeCounter > 0)
+                {
+                    myRgbdy.velocity = Vector2.up * jumpForce;
+                    jumpTimeCounter -= Time.deltaTime;
+                }
+                else { isJumping = false; }
+            }
+            if (Input.GetButtonUp("Jump")){
+                isJumping = false;
+            }
             // Makes the player able to climb ladders
             if (climbing == true)
             {
