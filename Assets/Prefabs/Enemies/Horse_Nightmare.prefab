@@ -157,8 +157,8 @@ GameObject:
   - component: {fileID: 3598853130500408564}
   - component: {fileID: 61271857780042164}
   - component: {fileID: 3023663272258729047}
-  - component: {fileID: 910007163}
   - component: {fileID: 910007164}
+  - component: {fileID: 5389721327374756262}
   m_Layer: 0
   m_Name: Horse_Nightmare
   m_TagString: Untagged
@@ -265,7 +265,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03674221, y: -0.15533519}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -276,7 +276,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.95, y: 1.925}
+  m_Size: {x: 1.8844721, y: 1.2009313}
   m_EdgeRadius: 0
 --- !u!50 &3023663272258729047
 Rigidbody2D:
@@ -299,21 +299,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &910007163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9077665666667600230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e89fd46e3065c40b2aaf2f44ae04e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  back: {x: -3, y: 1, z: 0}
-  forth: {x: 3, y: 1, z: 0}
-  speed: 0.3
 --- !u!114 &910007164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,3 +313,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageDealt: 1
   destroyedOnCollision: 0
+--- !u!114 &5389721327374756262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9077665666667600230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e89fd46e3065c40b2aaf2f44ae04e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GhostCntroller : MonoBehaviour
+public class HorseController : MonoBehaviour
 {
     public float speed;
     Animator myAnim;
@@ -17,7 +17,7 @@ public class GhostCntroller : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {//Makes the ghost character go back and forth along the X Axis.
+    {//Makes the horse character go back and forth along the X Axis.
         if (left==true)
         {
             transform.position = transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * speed;
@@ -32,7 +32,7 @@ public class GhostCntroller : MonoBehaviour
      }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {// The distance he travels right and left is changed by adding box colliders with tags.
         if (collision.CompareTag("Left")){
             left = true;
         }

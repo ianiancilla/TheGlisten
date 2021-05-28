@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Left
   - Right
+  - Target
   layers:
   - Default
   - TransparentFX

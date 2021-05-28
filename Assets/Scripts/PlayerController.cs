@@ -12,14 +12,16 @@ public class PlayerController : MonoBehaviour
     private bool climbing;
     public float climbSpeed;
     public bool canMove;
+    public GameOver gameOver;
     // Start is called before the first frame update
     void Start()
     {
         myRgbdy = gameObject.GetComponent<Rigidbody2D>();
         canMove = true;
+        gameOver = FindObjectOfType<GameOver>();
 
     }
-
+    
     // Update is called once per frame
     void Update()
     {// Moves the player left or right at a certain speed.
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
            
             transform.position = transform.position + new Vector3(horizontal, 0, 0) * Time.deltaTime * moveSpeed;
         
+            //Makes sure the player can only jump when they are on the ground.
         if (Input.GetButtonDown("Jump") && (Mathf.Abs(myRgbdy.velocity.y) < 0.001f))
         {
             myRgbdy.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
@@ -55,7 +58,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D collision)
-    {
+    {//detects when the player is next to a ladder.
         if (collision.CompareTag("Ladder"))
         {
             climbing = true;
@@ -69,10 +72,23 @@ public class PlayerController : MonoBehaviour
             climbing = false;
             myRgbdy.gravityScale = 1f;
         }
+
+      
     }
 
-   
- }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {//What will happen if the player reaches the target. The countown stops, they cant move,
+        //The game object they touch disappears. The next level loads.
+        if (collision.CompareTag("Target"))
+        {
+            gameOver.countdown = false;
+            canMove = false;
+            Destroy(collision.gameObject);
+        }
+    }
+
+
+}
 
 
                 
