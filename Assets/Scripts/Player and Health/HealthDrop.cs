@@ -6,19 +6,20 @@ using UnityEngine.Experimental.Rendering.Universal; // to have access to Light2D
 
 public class HealthDrop : MonoBehaviour
 {
-    [Tooltip("How fast light should disappear." +
-              "A score of 1 means 1 point of health disappears every second." +
+    [Tooltip("Whether the light will decay e disappear in time.")]
+    [SerializeField] bool decays = true;
+
+    [Tooltip("How many seconds the light stays on screen." +
+              "A score of 1 means light goes off in 1 second." +
               "A score of 2 means 2 points of health disappear each second." +
               "With a score of 0 health does not decay.")]
-    [SerializeField] float decayFactor = 1f;
+    [SerializeField] float decayTime = 5f;
+    [Tooltip ("A measure of the variance in decay time of flames, added for a more natural effect." +
+              "At 1 all flames have the same decay time, at 2 the longest living flames live double the assigned time.")]
+    [SerializeField] float decayVariance = 1.2f;
 
-    // member variables
-    private float healthStored = 0f;
-    bool isDecaying = false;
-    float spriteVerticalSqueezing = 0.8f;
-    float lightDropPerSecond;
-    float xDropPerSecond;
-    float yDropPerSecond;
+    float lifeLeft;
+    float maxIntensity;
 
     // cache
     Light2D dropLight;
@@ -29,53 +30,26 @@ public class HealthDrop : MonoBehaviour
         dropLight = GetComponentInChildren<Light2D>();
     }
 
-    private void Update()
+    private void Start()
     {
-        if (isDecaying) { Decay(); }
+        decayTime *= decayVariance;
+        lifeLeft = decayTime;
+        maxIntensity = dropLight.intensity;
     }
 
-    public void InitialiseDrop(float proportionToMaxHealth,
-                               float healthAmount,
-                               float lightIntensity)
+    private void Update()
     {
-        healthStored = healthAmount;
-        dropLight.intensity = lightIntensity;
-        transform.localScale = new Vector3(proportionToMaxHealth * spriteVerticalSqueezing,
-                                           proportionToMaxHealth,
-                                           1);
-
-        if (decayFactor != 0f)
-        {
-            isDecaying = true;
-
-            lightDropPerSecond = (lightIntensity / healthStored) * decayFactor;
-            xDropPerSecond = (transform.localScale.x / healthStored) * decayFactor;
-            yDropPerSecond = (transform.localScale.y / healthStored) * decayFactor;
-        }
+        if (decays) { Decay(); };
     }
 
     private void Decay()
     {
-        dropLight.intensity -= Time.deltaTime * lightDropPerSecond;
+        lifeLeft -= Time.deltaTime;
 
-        if (dropLight.intensity <= 0)
-        {
-            Destroy(this.gameObject);
-        }
+        if (lifeLeft <= 0) { Destroy(gameObject); }
 
-        transform.localScale = new Vector3(transform.localScale.x - Time.deltaTime * xDropPerSecond,
-                                           transform.localScale.y - Time.deltaTime * yDropPerSecond,
-                                           1);
+        float currentProportion = lifeLeft / decayTime;
+        dropLight.intensity = maxIntensity * currentProportion;
+        transform.localScale = new Vector3(currentProportion, currentProportion, 1);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Player_HealthGlisten playerHealth = collision.gameObject.GetComponent<Player_HealthGlisten>();
-        if (playerHealth)
-        {
-            playerHealth.HealDamage(healthStored);
-            Destroy(this.gameObject);
-        }
-    }
-
 }

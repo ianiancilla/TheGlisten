@@ -37,11 +37,15 @@ public class GameOver : MonoBehaviour
         if (timerCounter <= 0)
         {
             timerCounter = 0;
-            pc.canMove = false;
-            gameOverScreen.SetActive(true);
+            TriggerGameOver();
         }
     }
 
-   
+    public void TriggerGameOver()
+    {
+        pc.canMove = false;
+        gameOverScreen.SetActive(true);
     }
+
+}
 
