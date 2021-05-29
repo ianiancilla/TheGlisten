@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 826966159}
   - component: {fileID: 826966160}
   - component: {fileID: 826966161}
+  - component: {fileID: 6725335085911164406}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -175,9 +176,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2298882d2ccc0db4f991e5346bc976bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  HealthDropPrefab: {fileID: 5768311435200472608, guid: a7069cfdf8cbfd148a1ef3c36ba41bb8,
+  maxHealth: 100
+  healthDropPrefab: {fileID: 5768311435200472608, guid: a7069cfdf8cbfd148a1ef3c36ba41bb8,
     type: 3}
+  healthDropDirectionNoise: 20
+  healthDropScatterForce: 5
+  healthDropVerticalForceScaler: 1.5
+--- !u!114 &6725335085911164406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7390890325832961825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91453b120f5050349b5d427c55bbdce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityScaler: 1
 --- !u!1001 &4414703862581022613
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -35,3 +35,4 @@ Material:
     - Color_B6F64318: {r: 2.9960785, g: 0.32941177, b: 0, a: 0}
     - Vector2_C33DA1A1: {r: 3, g: -0.17, b: 0, a: 0}
     - Vector2_DDDC45BD: {r: 0, g: 0, b: 0, a: 0}
+    - _MovementSpeed: {r: 0, g: 0, b: 0, a: 0}
