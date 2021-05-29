@@ -1517,10 +1517,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 826966159, guid: 6205109dc8fa76943a2623d7bd6b8cef, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: c79cb0bb5c6eab94baeeb9280d8a4c5b, type: 2}
+    - target: {fileID: 6725335085911164406, guid: 6205109dc8fa76943a2623d7bd6b8cef,
+        type: 3}
+      propertyPath: velocitySizeScaler
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6725335085911164406, guid: 6205109dc8fa76943a2623d7bd6b8cef,
+        type: 3}
+      propertyPath: velocityFlickerScaler
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7390890325832961825, guid: 6205109dc8fa76943a2623d7bd6b8cef,
         type: 3}
       propertyPath: m_Name

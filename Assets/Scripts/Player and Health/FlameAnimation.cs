@@ -5,26 +5,36 @@ using UnityEngine;
 
 public class FlameAnimation : MonoBehaviour
 {
-    [SerializeField] float velocityScaler = 1f;
+    [Tooltip("How fast the shader will flicker when moving")]
+    [SerializeField] float velocityFlickerScaler = 2f;
+
+    [Tooltip("How much theplaye x size will increase when moving")]
+    [SerializeField] float velocitySizeScaler = 0.2f;
+
+    [Tooltip ("How long the player sprite will take to go back to idle")]
+    [SerializeField] float timeToIdle = 1f;
+
 
     // member variables
     Vector3 previousPosition;
+    float shaderSpeedDecrease;
+    float spriteSizeDecrease;
 
     // cache
     SpriteRenderer flameSpriteRenderer;
-    Rigidbody2D rb;
 
     private void Awake()
     {
         // cache
         flameSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
     {
         previousPosition = transform.position;
 
+        shaderSpeedDecrease = velocityFlickerScaler / timeToIdle;
+        spriteSizeDecrease = velocitySizeScaler / timeToIdle;
     }
 
     // Update is called once per frame
@@ -40,11 +50,60 @@ public class FlameAnimation : MonoBehaviour
         {
             Vector3 lastMovement = (transform.position - previousPosition).normalized;
 
-            flameSpriteRenderer.material.SetVector("_MovementSpeed", new Vector4(lastMovement.x * velocityScaler,                                                                                 lastMovement.y * velocityScaler));
+            flameSpriteRenderer.material.SetVector("_MovementSpeed", 
+                                                   new Vector4(lastMovement.x * velocityFlickerScaler,
+                                                               lastMovement.y * velocityFlickerScaler,
+                                                               0,0));
+
+            flameSpriteRenderer.transform.localScale = new Vector3(1 + Mathf.Abs(lastMovement.x * velocitySizeScaler),1,1);
+
         }
         else
         {
-            flameSpriteRenderer.material.SetVector("_MovementSpeed", new Vector4(0,0));
+            // decrease local scale
+            flameSpriteRenderer.transform.localScale = new Vector3(Mathf.Clamp(flameSpriteRenderer.transform.localScale.x - spriteSizeDecrease * Time.deltaTime,
+                                                                               1,
+                                                                               1 + velocitySizeScaler),
+                                                                   1, 1);
+
+
+            // slow shader speed
+            //Vector4 currentShaderSpeed = flameSpriteRenderer.material.GetVector("_MovementSpeed");
+
+            //if (currentShaderSpeed.x > 0)
+            //{
+            //    Debug.Log(currentShaderSpeed.x - shaderSpeedDecrease * Time.deltaTime);
+            //    if (currentShaderSpeed.y > 0)
+            //    {
+            //        newShaderSpeed = new Vector4(currentShaderSpeed.x - shaderSpeedDecrease * Time.deltaTime,  
+            //                                     currentShaderSpeed.y - shaderSpeedDecrease * Time.deltaTime,
+            //                                     0, 0);
+            //    }
+            //    else if (currentShaderSpeed.y < 0)
+            //    {
+            //        newShaderSpeed = new Vector4(currentShaderSpeed.x - shaderSpeedDecrease * Time.deltaTime,
+            //                                     currentShaderSpeed.y + shaderSpeedDecrease * Time.deltaTime,
+            //                                     0, 0);
+            //    }
+            //}
+
+            //else if (currentShaderSpeed.x < 0)
+            //{
+            //    if (currentShaderSpeed.y > 0)
+            //    {
+            //        newShaderSpeed = new Vector4(currentShaderSpeed.x + shaderSpeedDecrease * Time.deltaTime,
+            //                                     currentShaderSpeed.y - shaderSpeedDecrease * Time.deltaTime,
+            //                                     0, 0);
+            //    }
+            //    else if (currentShaderSpeed.y < 0)
+            //    {
+            //        newShaderSpeed = new Vector4(currentShaderSpeed.x + shaderSpeedDecrease * Time.deltaTime,
+            //                                     currentShaderSpeed.y + shaderSpeedDecrease * Time.deltaTime,
+            //                                     0, 0);
+            //    }
+            //}
+
+            flameSpriteRenderer.material.SetVector("_MovementSpeed", Vector4.zero);
         }
         previousPosition = transform.position;
     }
