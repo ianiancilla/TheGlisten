@@ -22,11 +22,14 @@ public class Player_HealthGlisten : MonoBehaviour
 
     // cache
     Light2D playerLight;
+    FlameAnimation flameAnimation;
 
     private void Awake()
     {
         // cache
         playerLight = GetComponentInChildren<Light2D>();
+        flameAnimation = GetComponent<FlameAnimation>();
+
     }
 
     // Start is called before the first frame update
@@ -53,6 +56,9 @@ public class Player_HealthGlisten : MonoBehaviour
         float damageProportion = damageTaken / maxHealth;
         float intensityChange = lightIntensityMax * damageProportion;
         playerLight.intensity -= intensityChange;
+
+        // trigger animation
+        flameAnimation.AnimateDamage();
 
         // spawn a HealthDrop for each point of damage taken, and make them fly off like Sonic rings
         int numberOfDrops = (int)damageTaken;

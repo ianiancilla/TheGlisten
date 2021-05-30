@@ -358,6 +358,8 @@ MonoBehaviour:
   velocityFlickerScaler: 2
   velocitySizeScaler: 0.15
   timeToIdle: 1
+  damageAnimationLength: 2
+  damageColour: {r: 3.5137255, g: 0.32941177, b: 0, a: 0}
 --- !u!70 &1371229468
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

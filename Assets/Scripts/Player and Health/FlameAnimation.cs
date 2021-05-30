@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FlameAnimation : MonoBehaviour
 {
+    [Header ("Movement animation")]
     [Tooltip("How fast the shader will flicker when moving")]
     [SerializeField] float velocityFlickerScaler = 2f;
 
@@ -14,11 +15,31 @@ public class FlameAnimation : MonoBehaviour
     [Tooltip ("How long the player sprite will take to go back to idle")]
     [SerializeField] float timeToIdle = 1f;
 
+    [Header("Damage animation")]
+    [SerializeField] float damageAnimationLength = 20f;
+    [ColorUsageAttribute(true, true)]
+    [SerializeField] Color damageColour;
+
 
     // member variables
     Vector3 previousPosition;
-    float shaderSpeedDecrease;
     float spriteSizeDecrease;
+    bool isAnimatingMovement = true;
+
+    Color startColor;
+    float startNoiseScale;
+    float startScatter;
+    float startSmoothness;
+    float startBrightness;
+    float startTiling;
+
+
+    float damageNoiseScale = 35.5f;
+    float damageScatter = 2f;
+    float damageSmoothness = 1.3f;
+    float damageBrightness = 1f;
+    float damageTiling = 1.5f;
+
 
     // cache
     SpriteRenderer flameSpriteRenderer;
@@ -32,18 +53,23 @@ public class FlameAnimation : MonoBehaviour
     private void Start()
     {
         previousPosition = transform.position;
-
-        shaderSpeedDecrease = velocityFlickerScaler / timeToIdle;
         spriteSizeDecrease = velocitySizeScaler / timeToIdle;
+
+        startColor = flameSpriteRenderer.material.GetColor("_Color");
+        startNoiseScale = flameSpriteRenderer.material.GetFloat("_NoiseScale");
+        startScatter = flameSpriteRenderer.material.GetFloat("_Scatter");
+        startSmoothness = flameSpriteRenderer.material.GetFloat("_Smoothness");
+        startBrightness = flameSpriteRenderer.material.GetFloat("_Brightness");
+        startTiling = flameSpriteRenderer.material.GetFloat("_Tiling");
     }
 
     // Update is called once per frame
     void Update()
     {
-        AnimateFlame();
+        if (isAnimatingMovement) { AnimateMovement(); }
     }
 
-    private void AnimateFlame()
+    private void AnimateMovement()
     {
 
         if (transform.position != previousPosition)
@@ -56,7 +82,6 @@ public class FlameAnimation : MonoBehaviour
                                                                0,0));
 
             flameSpriteRenderer.transform.localScale = new Vector3(1 + Mathf.Abs(lastMovement.x * velocitySizeScaler),1,1);
-
         }
         else
         {
@@ -66,45 +91,68 @@ public class FlameAnimation : MonoBehaviour
                                                                                1 + velocitySizeScaler),
                                                                    1, 1);
 
-
-            // slow shader speed
-            //Vector4 currentShaderSpeed = flameSpriteRenderer.material.GetVector("_MovementSpeed");
-
-            //if (currentShaderSpeed.x > 0)
-            //{
-            //    Debug.Log(currentShaderSpeed.x - shaderSpeedDecrease * Time.deltaTime);
-            //    if (currentShaderSpeed.y > 0)
-            //    {
-            //        newShaderSpeed = new Vector4(currentShaderSpeed.x - shaderSpeedDecrease * Time.deltaTime,  
-            //                                     currentShaderSpeed.y - shaderSpeedDecrease * Time.deltaTime,
-            //                                     0, 0);
-            //    }
-            //    else if (currentShaderSpeed.y < 0)
-            //    {
-            //        newShaderSpeed = new Vector4(currentShaderSpeed.x - shaderSpeedDecrease * Time.deltaTime,
-            //                                     currentShaderSpeed.y + shaderSpeedDecrease * Time.deltaTime,
-            //                                     0, 0);
-            //    }
-            //}
-
-            //else if (currentShaderSpeed.x < 0)
-            //{
-            //    if (currentShaderSpeed.y > 0)
-            //    {
-            //        newShaderSpeed = new Vector4(currentShaderSpeed.x + shaderSpeedDecrease * Time.deltaTime,
-            //                                     currentShaderSpeed.y - shaderSpeedDecrease * Time.deltaTime,
-            //                                     0, 0);
-            //    }
-            //    else if (currentShaderSpeed.y < 0)
-            //    {
-            //        newShaderSpeed = new Vector4(currentShaderSpeed.x + shaderSpeedDecrease * Time.deltaTime,
-            //                                     currentShaderSpeed.y + shaderSpeedDecrease * Time.deltaTime,
-            //                                     0, 0);
-            //    }
-            //}
-
             flameSpriteRenderer.material.SetVector("_MovementSpeed", Vector4.zero);
         }
         previousPosition = transform.position;
+    }
+
+    public void AnimateDeath() { }
+
+    public void AnimateDamage()
+    {
+        StartCoroutine(DamageAnimation());
+    }
+
+    IEnumerator DamageAnimation()
+    {
+        isAnimatingMovement = false;
+
+        flameSpriteRenderer.material.SetColor("_Color", damageColour);
+        flameSpriteRenderer.material.SetFloat("_NoiseScale", damageNoiseScale);
+        flameSpriteRenderer.material.SetFloat("_Scatter", damageScatter);
+        flameSpriteRenderer.material.SetFloat("_Smoothness", damageSmoothness);
+        flameSpriteRenderer.material.SetFloat("_Brightness", damageBrightness);
+        flameSpriteRenderer.material.SetFloat("_Tiling", damageTiling);
+
+        int animationFrames = (int)(damageAnimationLength / Time.deltaTime);
+
+        for (int i = 0; i <= animationFrames; i++)
+        {
+            float interpolationRatio = (float)i / (float)animationFrames;
+
+            flameSpriteRenderer.material.SetColor("_Color", Color.Lerp(damageColour,
+                                                                       startColor,
+                                                                       interpolationRatio));
+            flameSpriteRenderer.material.SetFloat("_NoiseScale", Mathf.Lerp(damageNoiseScale,
+                                                                            startNoiseScale,
+                                                                            interpolationRatio));
+            flameSpriteRenderer.material.SetFloat("_Scatter", Mathf.Lerp(damageScatter,
+                                                                         startScatter,
+                                                                         interpolationRatio));
+            flameSpriteRenderer.material.SetFloat("_Smoothness", Mathf.Lerp(damageSmoothness,
+                                                                            startSmoothness,
+                                                                            interpolationRatio));
+            flameSpriteRenderer.material.SetFloat("_Brightness", Mathf.Lerp(damageBrightness,
+                                                                            startBrightness,
+                                                                            interpolationRatio));
+            flameSpriteRenderer.material.SetFloat("_Tiling", Mathf.Lerp(damageTiling,
+                                                                        startTiling,
+                                                                        interpolationRatio));
+
+            Debug.Log(Mathf.Lerp(damageBrightness,
+                                                                            startBrightness,
+                                                                            interpolationRatio));
+
+            yield return null;
+        }
+
+        flameSpriteRenderer.material.SetColor("_Color", startColor);
+        flameSpriteRenderer.material.SetFloat("_NoiseScale", startNoiseScale);
+        flameSpriteRenderer.material.SetFloat("_Scatter", startScatter);
+        flameSpriteRenderer.material.SetFloat("_Smoothness", startSmoothness);
+        flameSpriteRenderer.material.SetFloat("_Brightness", startBrightness);
+        flameSpriteRenderer.material.SetFloat("_Tiling", startTiling);
+
+        isAnimatingMovement = true;
     }
 }
