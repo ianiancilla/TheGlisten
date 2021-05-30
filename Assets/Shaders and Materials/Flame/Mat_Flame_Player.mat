@@ -31,8 +31,14 @@ Material:
     - Vector1_95D9D8A3: 1.5
     - Vector1_BE100C94: 25
     - Vector1_D55F1D5A: 0.88
+    - _Brightness: 0.5
+    - _NoiseScale: 25
+    - _Scatter: 0.85
+    - _Smoothness: 1.7
+    - _Tiling: 1.01
     m_Colors:
-    - Color_B6F64318: {r: 2.9960785, g: 0.32941177, b: 0, a: 0}
+    - Color_B6F64318: {r: 6.901961, g: 0.2509804, b: 0, a: 0}
     - Vector2_C33DA1A1: {r: 3, g: -0.17, b: 0, a: 0}
     - Vector2_DDDC45BD: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 2.118547, g: 0.5887389, b: 0, a: 0}
     - _MovementSpeed: {r: 0, g: 0, b: 0, a: 0}

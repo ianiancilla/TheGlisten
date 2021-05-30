@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 888259849}
   - component: {fileID: 888259850}
+  - component: {fileID: 1120761508740933848}
   m_Layer: 9
   m_Name: Point Light 2D (2)
   m_TagString: Untagged
@@ -72,6 +73,22 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &1120761508740933848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888259848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18b3a76a0df3de4e8bca6b33cbcab4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFlickering: 1
+  noiseScale: 0.1
+  flickerSpeed: 20
+  startingIntensity: 4
 --- !u!1 &1135529417
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,6 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1135529418}
   - component: {fileID: 1135529419}
+  - component: {fileID: 8975811847617040815}
   m_Layer: 9
   m_Name: Point Light 2D (1)
   m_TagString: Untagged
@@ -144,6 +162,22 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &8975811847617040815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135529417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18b3a76a0df3de4e8bca6b33cbcab4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFlickering: 1
+  noiseScale: 0.1
+  flickerSpeed: 20
+  startingIntensity: 4
 --- !u!1 &9077665666667600230
 GameObject:
   m_ObjectHideFlags: 0

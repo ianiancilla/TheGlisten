@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal; // to have access to Light2D component
 
 public class Player_HealthGlisten : MonoBehaviour
 {
@@ -21,18 +20,20 @@ public class Player_HealthGlisten : MonoBehaviour
     private float currentHealth;
 
     // cache
-    Light2D playerLight;
+    LightFlicker playerLight;
+    FlameAnimation flameAnimation;
 
     private void Awake()
     {
         // cache
-        playerLight = GetComponentInChildren<Light2D>();
+        playerLight = GetComponentInChildren<LightFlicker>();
+        flameAnimation = GetComponent<FlameAnimation>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        lightIntensityMax = playerLight.intensity;
+        lightIntensityMax = playerLight.GetIntensity();
         currentHealth = maxHealth;
     }
 
@@ -52,10 +53,18 @@ public class Player_HealthGlisten : MonoBehaviour
         // reduce light intensity proportionally to damage taken
         float damageProportion = damageTaken / maxHealth;
         float intensityChange = lightIntensityMax * damageProportion;
-        playerLight.intensity -= intensityChange;
+        playerLight.SetIntensity(playerLight.GetIntensity() - intensityChange);
+
+        // trigger animation
+        flameAnimation.AnimateDamage();
 
         // spawn a HealthDrop for each point of damage taken, and make them fly off like Sonic rings
         int numberOfDrops = (int)damageTaken;
+        SpawnHealthDrops(numberOfDrops);
+    }
+
+    private void SpawnHealthDrops(int numberOfDrops)
+    {
         float angleOfVelocity = 180f / (numberOfDrops + 1);
 
         for (int i = 0; i < numberOfDrops; i++)
@@ -64,31 +73,17 @@ public class Player_HealthGlisten : MonoBehaviour
             GameObject healthDrop = Instantiate(healthDropPrefab, transform.position, Quaternion.identity);
 
             // shoot it off in appropriate direction, so that between them all drops form an arc
-            float velocityDegrees = angleOfVelocity * (i + 1 );
+            float velocityDegrees = angleOfVelocity * (i + 1);
             velocityDegrees += +Random.Range(0 - healthDropDirectionNoise, healthDropDirectionNoise);
             velocityDegrees = Mathf.Clamp(velocityDegrees, 10, 170);
 
             float velocityRadians = velocityDegrees * Mathf.Deg2Rad;
-                                    
+
             Vector2 direction = new Vector2(Mathf.Cos(velocityRadians),
-                                            Mathf.Sin(velocityRadians)* healthDropVerticalForceScaler);
+                                            Mathf.Sin(velocityRadians) * healthDropVerticalForceScaler);
             healthDrop.GetComponent<Rigidbody2D>().velocity = healthDropScatterForce * direction;
-            //Debug.Log("angle of velocity is " + angleOfVelocity + " velocity is " + velocityDegrees + "vector is " + direction);
         }
-
-
     }
-
-    // commented out as feature was removed
-    //public void HealDamage (float damageHealed)
-    //{
-    //    // increase health score
-    //    currentHealth += damageHealed;
-
-    //    // increase light intensity proportionally to damage taken
-    //    float healingProportion = damageHealed / maxHealth;
-    //    playerLight.intensity += lightIntensityMax * healingProportion;
-    //}
 
     private void Die()
     {
