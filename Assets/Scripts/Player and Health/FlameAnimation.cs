@@ -78,8 +78,7 @@ public class FlameAnimation : MonoBehaviour
 
             flameSpriteRenderer.material.SetVector("_MovementSpeed", 
                                                    new Vector4(lastMovement.x * velocityFlickerScaler,
-                                                               lastMovement.y * velocityFlickerScaler,
-                                                               0,0));
+                                                               0,0,0));
 
             flameSpriteRenderer.transform.localScale = new Vector3(1 + Mathf.Abs(lastMovement.x * velocitySizeScaler),1,1);
         }
@@ -91,7 +90,18 @@ public class FlameAnimation : MonoBehaviour
                                                                                1 + velocitySizeScaler),
                                                                    1, 1);
 
-            flameSpriteRenderer.material.SetVector("_MovementSpeed", Vector4.zero);
+            // decrease speed
+            float currentSpeed = flameSpriteRenderer.material.GetVector("_MovementSpeed").x;
+            float newSpeed = Mathf.Lerp(currentSpeed, 0, 0.5f);
+
+            if (newSpeed > Mathf.Epsilon)
+            {
+                flameSpriteRenderer.material.SetVector("_MovementSpeed", new Vector4(newSpeed, 0,0,0));
+            }
+            else
+            {
+                flameSpriteRenderer.material.SetVector("_MovementSpeed", Vector4.zero);
+            }
         }
         previousPosition = transform.position;
     }

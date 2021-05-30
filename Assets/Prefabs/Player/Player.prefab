@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFlickering: 1
-  noiseScale: 0.25
+  noiseScale: 0.2
   flickerSpeed: 10
   startingIntensity: 4.5
 --- !u!1 &7390890325832961825
@@ -375,7 +375,7 @@ MonoBehaviour:
   velocityFlickerScaler: 2
   velocitySizeScaler: 0.15
   timeToIdle: 1
-  damageAnimationLength: 2
+  damageAnimationLength: 1
   damageColour: {r: 9.805214, g: 0.10267241, b: 0, a: 0}
 --- !u!70 &1371229468
 CapsuleCollider2D:
