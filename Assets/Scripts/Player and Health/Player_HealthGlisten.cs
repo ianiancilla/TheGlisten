@@ -56,6 +56,12 @@ public class Player_HealthGlisten : MonoBehaviour
 
         // spawn a HealthDrop for each point of damage taken, and make them fly off like Sonic rings
         int numberOfDrops = (int)damageTaken;
+        SpawnHealthDrops(numberOfDrops);
+
+    }
+
+    private void SpawnHealthDrops(int numberOfDrops)
+    {
         float angleOfVelocity = 180f / (numberOfDrops + 1);
 
         for (int i = 0; i < numberOfDrops; i++)
@@ -64,19 +70,16 @@ public class Player_HealthGlisten : MonoBehaviour
             GameObject healthDrop = Instantiate(healthDropPrefab, transform.position, Quaternion.identity);
 
             // shoot it off in appropriate direction, so that between them all drops form an arc
-            float velocityDegrees = angleOfVelocity * (i + 1 );
+            float velocityDegrees = angleOfVelocity * (i + 1);
             velocityDegrees += +Random.Range(0 - healthDropDirectionNoise, healthDropDirectionNoise);
             velocityDegrees = Mathf.Clamp(velocityDegrees, 10, 170);
 
             float velocityRadians = velocityDegrees * Mathf.Deg2Rad;
-                                    
+
             Vector2 direction = new Vector2(Mathf.Cos(velocityRadians),
-                                            Mathf.Sin(velocityRadians)* healthDropVerticalForceScaler);
+                                            Mathf.Sin(velocityRadians) * healthDropVerticalForceScaler);
             healthDrop.GetComponent<Rigidbody2D>().velocity = healthDropScatterForce * direction;
-            //Debug.Log("angle of velocity is " + angleOfVelocity + " velocity is " + velocityDegrees + "vector is " + direction);
         }
-
-
     }
 
     // commented out as feature was removed
