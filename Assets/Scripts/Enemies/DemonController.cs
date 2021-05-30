@@ -25,6 +25,20 @@ public class DemonController : MonoBehaviour
             {
                 myAnim.SetBool("AttackLeft", true);
             }
+
+            if (target.position.x >= transform.position.x)
+            {
+                myAnim.SetBool("AttackRight", true);
+            }
+
+
+        }
+
+        if (Vector3.Distance(target.position, transform.position) > range)
+        {
+            myAnim.SetBool("AttackRight", false);
+            myAnim.SetBool("AttackLeft", false);
+            myAnim.SetBool("Idle", true);
         }
     }
 }
