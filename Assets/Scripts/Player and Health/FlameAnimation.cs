@@ -139,10 +139,6 @@ public class FlameAnimation : MonoBehaviour
                                                                         startTiling,
                                                                         interpolationRatio));
 
-            Debug.Log(Mathf.Lerp(damageBrightness,
-                                                                            startBrightness,
-                                                                            interpolationRatio));
-
             yield return null;
         }
 

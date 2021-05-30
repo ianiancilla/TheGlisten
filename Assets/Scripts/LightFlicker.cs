@@ -8,10 +8,14 @@ public class LightFlicker : MonoBehaviour
 {
     [SerializeField] bool isFlickering = true;
     [SerializeField] float noiseScale = 0.1f;
+    [SerializeField] float flickerSpeed = 20f;
+    [SerializeField] float startingIntensity = 2f;
+
+
 
     // member variables
-    float noiseOffset = 3f;
-    [HideInInspector] public float intensity;
+    float noiseOffset;
+    float intensity;
 
     // cache
     Light2D myLight;
@@ -19,11 +23,14 @@ public class LightFlicker : MonoBehaviour
     private void Awake()
     {
         myLight = GetComponent<Light2D>();
+
+        myLight.intensity = startingIntensity;
+        intensity = myLight.intensity;
     }
 
     private void Start()
     {
-        intensity = myLight.intensity;
+        noiseOffset = Random.Range(0f, 3f);
     }
 
     // Update is called once per frame
@@ -34,6 +41,11 @@ public class LightFlicker : MonoBehaviour
 
     private void Flicker()
     {
-        myLight.intensity = intensity * Mathf.PerlinNoise(Time.time, 0.5f);
+        myLight.intensity = intensity + (Mathf.PerlinNoise(Time.time * flickerSpeed + noiseOffset,
+                                                           0.5f)
+                                         * noiseScale * intensity);
     }
+
+    public void SetIntensity (float newIntensity) { intensity = newIntensity; }
+    public float GetIntensity() { return intensity; }
 }

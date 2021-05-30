@@ -1307,25 +1307,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6725335085911164406, guid: 6205109dc8fa76943a2623d7bd6b8cef,
-        type: 3}
-      propertyPath: damageColour.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725335085911164406, guid: 6205109dc8fa76943a2623d7bd6b8cef,
-        type: 3}
-      propertyPath: damageColour.g
-      value: 0.10267241
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725335085911164406, guid: 6205109dc8fa76943a2623d7bd6b8cef,
-        type: 3}
-      propertyPath: damageColour.r
-      value: 9.805214
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725335085911164406, guid: 6205109dc8fa76943a2623d7bd6b8cef,
-        type: 3}
-      propertyPath: damageAnimationLength
-      value: 2
+    - target: {fileID: 369948382, guid: 6205109dc8fa76943a2623d7bd6b8cef, type: 3}
+      propertyPath: noiseScale
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7390890325832961825, guid: 6205109dc8fa76943a2623d7bd6b8cef,
         type: 3}

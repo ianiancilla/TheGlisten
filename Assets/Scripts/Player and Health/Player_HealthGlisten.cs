@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal; // to have access to Light2D component
 
 public class Player_HealthGlisten : MonoBehaviour
 {
@@ -21,21 +20,20 @@ public class Player_HealthGlisten : MonoBehaviour
     private float currentHealth;
 
     // cache
-    Light2D playerLight;
+    LightFlicker playerLight;
     FlameAnimation flameAnimation;
 
     private void Awake()
     {
         // cache
-        playerLight = GetComponentInChildren<Light2D>();
+        playerLight = GetComponentInChildren<LightFlicker>();
         flameAnimation = GetComponent<FlameAnimation>();
-
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        lightIntensityMax = playerLight.intensity;
+        lightIntensityMax = playerLight.GetIntensity();
         currentHealth = maxHealth;
     }
 
@@ -55,7 +53,7 @@ public class Player_HealthGlisten : MonoBehaviour
         // reduce light intensity proportionally to damage taken
         float damageProportion = damageTaken / maxHealth;
         float intensityChange = lightIntensityMax * damageProportion;
-        playerLight.intensity -= intensityChange;
+        playerLight.SetIntensity(playerLight.GetIntensity() - intensityChange);
 
         // trigger animation
         flameAnimation.AnimateDamage();
@@ -63,7 +61,6 @@ public class Player_HealthGlisten : MonoBehaviour
         // spawn a HealthDrop for each point of damage taken, and make them fly off like Sonic rings
         int numberOfDrops = (int)damageTaken;
         SpawnHealthDrops(numberOfDrops);
-
     }
 
     private void SpawnHealthDrops(int numberOfDrops)
@@ -87,17 +84,6 @@ public class Player_HealthGlisten : MonoBehaviour
             healthDrop.GetComponent<Rigidbody2D>().velocity = healthDropScatterForce * direction;
         }
     }
-
-    // commented out as feature was removed
-    //public void HealDamage (float damageHealed)
-    //{
-    //    // increase health score
-    //    currentHealth += damageHealed;
-
-    //    // increase light intensity proportionally to damage taken
-    //    float healingProportion = damageHealed / maxHealth;
-    //    playerLight.intensity += lightIntensityMax * healingProportion;
-    //}
 
     private void Die()
     {

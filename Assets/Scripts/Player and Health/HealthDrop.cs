@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal; // to have access to Light2D component
 
 
 public class HealthDrop : MonoBehaviour
@@ -22,19 +21,19 @@ public class HealthDrop : MonoBehaviour
     float maxIntensity;
 
     // cache
-    Light2D dropLight;
+    LightFlicker dropLight;
 
     private void Awake()
     {
         // cache
-        dropLight = GetComponentInChildren<Light2D>();
+        dropLight = GetComponentInChildren<LightFlicker>();
     }
 
     private void Start()
     {
         decayTime *= decayVariance;
         lifeLeft = decayTime;
-        maxIntensity = dropLight.intensity;
+        maxIntensity = dropLight.GetIntensity();
     }
 
     private void Update()
@@ -49,7 +48,8 @@ public class HealthDrop : MonoBehaviour
         if (lifeLeft <= 0) { Destroy(gameObject); }
 
         float currentProportion = lifeLeft / decayTime;
-        dropLight.intensity = maxIntensity * currentProportion;
+        dropLight.SetIntensity(maxIntensity * currentProportion);
+
         transform.localScale = new Vector3(currentProportion, currentProportion, 1);
     }
 }
