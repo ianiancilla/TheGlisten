@@ -87,6 +87,9 @@ public class Player_HealthGlisten : MonoBehaviour
 
     private void Die()
     {
+        // trigger animation
+        flameAnimation.AnimateDeath();
+
         FindObjectOfType<GameOver>().TriggerGameOver();
     }
 

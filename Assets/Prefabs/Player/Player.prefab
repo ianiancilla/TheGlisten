@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2298882d2ccc0db4f991e5346bc976bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10
   healthDropPrefab: {fileID: 5768311435200472608, guid: a7069cfdf8cbfd148a1ef3c36ba41bb8,
     type: 3}
   healthDropDirectionNoise: 20
@@ -377,6 +377,7 @@ MonoBehaviour:
   timeToIdle: 1
   damageAnimationLength: 1
   damageColour: {r: 9.805214, g: 0.10267241, b: 0, a: 0}
+  deathAnimationLength: 1
 --- !u!70 &1371229468
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

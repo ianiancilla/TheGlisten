@@ -20,6 +20,10 @@ public class FlameAnimation : MonoBehaviour
     [ColorUsageAttribute(true, true)]
     [SerializeField] Color damageColour;
 
+    [Header("Death animation")]
+    [SerializeField] float deathAnimationLength = 20f;
+
+
 
     // member variables
     Vector3 previousPosition;
@@ -43,11 +47,13 @@ public class FlameAnimation : MonoBehaviour
 
     // cache
     SpriteRenderer flameSpriteRenderer;
+    LightFlicker myLight;
 
     private void Awake()
     {
         // cache
         flameSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        myLight = GetComponentInChildren<LightFlicker>();
     }
 
     private void Start()
@@ -106,7 +112,10 @@ public class FlameAnimation : MonoBehaviour
         previousPosition = transform.position;
     }
 
-    public void AnimateDeath() { }
+    public void AnimateDeath()
+    {
+        StartCoroutine(DeathAnimation());
+    }
 
     public void AnimateDamage()
     {
@@ -161,4 +170,33 @@ public class FlameAnimation : MonoBehaviour
 
         isAnimatingMovement = true;
     }
+
+    IEnumerator DeathAnimation()
+    {
+        isAnimatingMovement = false;
+        int animationFrames = (int)(deathAnimationLength / Time.deltaTime);
+
+        float startingIntensity = myLight.GetIntensity();
+        Color currentColor = flameSpriteRenderer.material.GetColor("_Color");
+
+
+        for (int i = 0; i <= animationFrames; i++)
+        {
+            float interpolationRatio = (float)i / (float)animationFrames;
+
+            myLight.SetIntensity(Mathf.Lerp(startingIntensity, 0, interpolationRatio));
+
+            Color newColor = Color.Lerp(currentColor,
+                                        Color.black,
+                                        interpolationRatio);
+
+            flameSpriteRenderer.material.SetColor("_Color", newColor);
+
+
+            yield return null;
+        }
+
+        isAnimatingMovement = true;
+    }
+
 }

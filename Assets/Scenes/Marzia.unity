@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a84bb5721692314f8c84d15cb603c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerLength: 100
+  timerLength: 3
   gameOverScreen: {fileID: 892538701}
   timer: {fileID: 991642952}
   countdown: 0
@@ -1307,16 +1307,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 369948382, guid: 6205109dc8fa76943a2623d7bd6b8cef, type: 3}
-      propertyPath: noiseScale
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 826966157, guid: 6205109dc8fa76943a2623d7bd6b8cef, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 826966157, guid: 6205109dc8fa76943a2623d7bd6b8cef, type: 3}
-      propertyPath: m_Interpolate
+    - target: {fileID: 6725335085911164406, guid: 6205109dc8fa76943a2623d7bd6b8cef,
+        type: 3}
+      propertyPath: damageColour.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7390890325832961825, guid: 6205109dc8fa76943a2623d7bd6b8cef,
