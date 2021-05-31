@@ -17,7 +17,7 @@ public class GameOver : MonoBehaviour
     {
         timerCounter = timerLength;
         pc = FindObjectOfType<PlayerController>();
-        countdown = true;
+        countdown = false;
     }
 
     // Update is called once per frame

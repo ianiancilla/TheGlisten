@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         gameOver = FindObjectOfType<GameOver>();
         cameraController = FindObjectOfType<Target_Start>();
+        gameOver.countdown = true;
         Invoke("Move", 2f);
 
     }
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        
         // Moves the player left or right at a certain speed.
 
         horizontal = Input.GetAxis("Horizontal");
@@ -107,9 +108,11 @@ public class PlayerController : MonoBehaviour
         //The game object they touch disappears. The next level loads.
         if (collision.CompareTag("Target"))
         {
+            myRgbdy.velocity = Vector2.zero;
             gameOver.countdown = false;
             canMove = false;
-            Destroy(collision.gameObject);
+            Debug.Log("Test");
+            
             Invoke("NextLevel", 2f);
         }
     }
@@ -121,7 +124,8 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        canMove = true;       
+        canMove = true;
+        gameOver.countdown = true;
     }
 }
 

@@ -1,49 +1,46 @@
 fileFormatVersion: 2
-guid: 493c6707345ff6b48b6a299af0c4e5d1
+guid: 800d921c6ca4ed9468fcfbe87665f551
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 655709798738885468
-    second: Spike Trap_0
+      213: -7129419709214212761
+    second: fire-skull_0
   - first:
-      213: -5486782236136590935
-    second: Spike Trap_1
+      213: 6585926276625298806
+    second: fire-skull_1
   - first:
-      213: -8234497896650857672
-    second: Spike Trap_2
+      213: -1364200414502597865
+    second: fire-skull_2
   - first:
-      213: -5192930455721986624
-    second: Spike Trap_3
+      213: -585822925407298799
+    second: fire-skull_3
   - first:
-      213: 5923587150041444306
-    second: Spike Trap_4
+      213: 7574296966142716682
+    second: fire-skull_4
   - first:
-      213: -866089688936412452
-    second: Spike Trap_5
+      213: 4485134122274163535
+    second: fire-skull_5
   - first:
-      213: -8492778342090306933
-    second: Spike Trap_6
+      213: -3408866496676386330
+    second: fire-skull_6
   - first:
-      213: -1253902737260056803
-    second: Spike Trap_7
+      213: 4143527229045088481
+    second: fire-skull_7
   - first:
-      213: 5853052189401253472
-    second: Spike Trap_8
+      213: 8204998694474518731
+    second: fire-skull_8
   - first:
-      213: 2072057527482076427
-    second: Spike Trap_9
+      213: -2833898084586622726
+    second: fire-skull_9
   - first:
-      213: -5969763853459158203
-    second: Spike Trap_10
+      213: -1108458465919169385
+    second: fire-skull_10
   - first:
-      213: -8060348361994746901
-    second: Spike Trap_11
+      213: -7771260407943737555
+    second: fire-skull_11
   - first:
-      213: 229089586794436645
-    second: Spike Trap_12
-  - first:
-      213: -4786169760783235251
-    second: Spike Trap_13
+      213: 9019600590674608324
+    second: fire-skull_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -87,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 35
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spike Trap_0
+      name: fire-skull_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 10
+        y: 8
+        width: 68
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5bf29d769c891900800000000000000
-      internalID: 655709798738885468
+      spriteID: 76d3e993c863f0d90800000000000000
+      internalID: -7129419709214212761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_1
+      name: fire-skull_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 143
+        y: 84
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a1b72f50a80bd3b0800000000000000
-      internalID: -5486782236136590935
+      spriteID: 675792b0e09e56b50800000000000000
+      internalID: 6585926276625298806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_2
+      name: fire-skull_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 194
+        y: 5
+        width: 87
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 833ac6e8acf29bd80800000000000000
-      internalID: -8234497896650857672
+      spriteID: 71bc12b63f2611de0800000000000000
+      internalID: -1364200414502597865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_3
+      name: fire-skull_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
+        x: 295
+        y: 4
+        width: 82
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c5326b83410fe7b0800000000000000
-      internalID: -5192930455721986624
+      spriteID: 11b51d5372dbed7f0800000000000000
+      internalID: -585822925407298799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_4
+      name: fire-skull_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
+        x: 449
+        y: 81
+        width: 9
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dfe942e02fc43250800000000000000
-      internalID: 5923587150041444306
+      spriteID: a0b614ad5fe4d1960800000000000000
+      internalID: 7574296966142716682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_5
+      name: fire-skull_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
+        x: 680
+        y: 8
+        width: 73
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cda015344080bf3f0800000000000000
-      internalID: -866089688936412452
+      spriteID: f4b822098b56e3e30800000000000000
+      internalID: 4485134122274163535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_6
+      name: fire-skull_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
+        x: 102
+        y: 4
+        width: 69
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8a83933817932a80800000000000000
-      internalID: -8492778342090306933
+      spriteID: 6e9afd27bf541b0d0800000000000000
+      internalID: -3408866496676386330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_7
+      name: fire-skull_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
+        x: 175
+        y: 47
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f69ba9a1e399ee0800000000000000
-      internalID: -1253902737260056803
+      spriteID: 1e0246cbf04c08930800000000000000
+      internalID: 4143527229045088481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_8
+      name: fire-skull_8
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
+        x: 369
+        y: 47
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +308,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 066851994f73a3150800000000000000
-      internalID: 5853052189401253472
+      spriteID: bc092b637d20ed170800000000000000
+      internalID: 8204998694474518731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_9
+      name: fire-skull_9
       rect:
         serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
+        x: 388
+        y: 7
+        width: 87
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +329,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0d4ebfc75d61cc10800000000000000
-      internalID: 2072057527482076427
+      spriteID: af0fd8ae4b8fba8d0800000000000000
+      internalID: -2833898084586622726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_10
+      name: fire-skull_10
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
+        x: 494
+        y: 4
+        width: 59
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,20 +350,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54b89998763272da0800000000000000
-      internalID: -5969763853459158203
+      spriteID: 79c0d9ae5e6fd90f0800000000000000
+      internalID: -1108458465919169385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_11
+      name: fire-skull_11
       rect:
         serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
+        x: 582
+        y: 5
+        width: 77
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,20 +371,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be3c66dced3e32090800000000000000
-      internalID: -8060348361994746901
+      spriteID: d2fc47735dfe62490800000000000000
+      internalID: -7771260407943737555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike Trap_12
+      name: fire-skull_12
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 32
-        height: 32
+        x: 456
+        y: 31
+        width: 11
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,29 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5289f92f3c3ed2300800000000000000
-      internalID: 229089586794436645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spike Trap_13
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d478cc5f5fb149db0800000000000000
-      internalID: -4786169760783235251
+      spriteID: 4c0401703fe0c2d70800000000000000
+      internalID: 9019600590674608324
       vertices: []
       indices: 
       edges: []
