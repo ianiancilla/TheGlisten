@@ -22,11 +22,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myRgbdy = gameObject.GetComponent<Rigidbody2D>();
-        canMove = true;
+        canMove = false;
         gameOver = FindObjectOfType<GameOver>();
         cameraController = FindObjectOfType<Target_Start>();
+        Invoke("Move", 2f);
 
     }
+
+    
     
     // Update is called once per frame
     void Update()
@@ -36,15 +39,15 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        if (canMove)
+        if (canMove==true)
         {
-            transform.position = transform.position + new Vector3(horizontal, 0, 0) * Time.deltaTime * moveSpeed;
-        
+            myRgbdy.velocity = new Vector2(horizontal * Time.deltaTime * moveSpeed,myRgbdy.velocity.y);
+
             //Makes sure the player can only jump when they are on the ground.
-        if (Input.GetButtonDown("Jump") && (Mathf.Abs(myRgbdy.velocity.y) < 0.001f))
+            if (Input.GetButtonDown("Jump") && (Mathf.Abs(myRgbdy.velocity.y) < 0.001f))
         {
                 //myRgbdy.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
-                myRgbdy.velocity = Vector2.up * jumpForce;
+                myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, jumpForce);
                 jumpTimeCounter = jumpTime;
                 isJumping = true;
         }
@@ -52,7 +55,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButton("Jump") && isJumping == true){
                 if (jumpTimeCounter > 0)
                 {
-                    myRgbdy.velocity = Vector2.up * jumpForce;
+                    myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, jumpForce);
                     jumpTimeCounter -= Time.deltaTime;
                 }
                 else { isJumping = false; }
@@ -76,16 +79,6 @@ public class PlayerController : MonoBehaviour
             //Remove Gravity so the player does not instantly fall while climbing.
             myRgbdy.gravityScale = 0f;
 
-        }
-
-        if (cameraController.target == true)
-        {
-            canMove = false;
-        }
-
-        if (cameraController.target == false)
-        {
-            canMove = true;
         }
 
     }
@@ -124,6 +117,11 @@ public class PlayerController : MonoBehaviour
     private void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
+    private void Move()
+    {
+        canMove = true;       
     }
 }
 

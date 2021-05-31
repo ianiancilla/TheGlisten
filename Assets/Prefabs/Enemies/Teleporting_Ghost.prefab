@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3844120682984007787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699874341038832221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c105dd1db7bccd48a18b55835051f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 25
+  destroyedOnCollision: 1
 --- !u!1 &3844120681850737428
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,20 +104,6 @@ Transform:
   m_Father: {fileID: 7022872515239532771}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3844120682984007787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3699874341038832221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c105dd1db7bccd48a18b55835051f05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageDealt: 10
-  destroyedOnCollision: 0
 --- !u!1 &8789308023707838671
 GameObject:
   m_ObjectHideFlags: 0
