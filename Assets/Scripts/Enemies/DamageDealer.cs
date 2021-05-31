@@ -15,7 +15,7 @@ public class DamageDealer : MonoBehaviour
         if (playerHealth)
         {
             playerHealth.TakeDamage(damageDealt);
-            Debug.Log(this.gameObject.name + " collided with " + collision.gameObject.name);
+            //Debug.Log(this.gameObject.name + " collided with " + collision.gameObject.name);
 
             if (destroyedOnCollision)
             {
