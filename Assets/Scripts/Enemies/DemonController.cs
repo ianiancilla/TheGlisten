@@ -11,12 +11,14 @@ public class DemonController : MonoBehaviour
     public float moveRange;
     public Transform homePosition;
     public float moveSpeed;
+    private BoxCollider2D myBoxC;
     // Start is called before the first frame update
     void Start()
     {
         target = FindObjectOfType<PlayerController>().transform;
         myAnim = GetComponent<Animator>();
         canMove = true;
+        myBoxC = GetComponent<BoxCollider2D>();
      
 
     }
@@ -94,5 +96,18 @@ public class DemonController : MonoBehaviour
         myAnim.SetFloat("MoveX", homePosition.position.x - transform.position.x);
         myAnim.SetFloat("MoveY", homePosition.position.y - transform.position.y);
         transform.position = Vector3.MoveTowards(transform.position, homePosition.transform.position, moveSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            myBoxC.enabled = !myBoxC.enabled;
+            Invoke("boxCollider2dAtive", 1f);
+        }
+    }
+    void boxCollider2dAtive()
+    {
+        myBoxC.enabled = true;
     }
 }

@@ -17,18 +17,22 @@ public class PlayerController : MonoBehaviour
     public float jumpTime;
     private float jumpTimeCounter;
     private bool isJumping;
+    public Target_Start cameraController;
     // Start is called before the first frame update
     void Start()
     {
         myRgbdy = gameObject.GetComponent<Rigidbody2D>();
         canMove = true;
         gameOver = FindObjectOfType<GameOver>();
+        cameraController = FindObjectOfType<Target_Start>();
 
     }
     
     // Update is called once per frame
     void Update()
-    {// Moves the player left or right at a certain speed.
+    {
+     
+        // Moves the player left or right at a certain speed.
 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
@@ -73,6 +77,17 @@ public class PlayerController : MonoBehaviour
             myRgbdy.gravityScale = 0f;
 
         }
+
+        if (cameraController.target == true)
+        {
+            canMove = false;
+        }
+
+        if (cameraController.target == false)
+        {
+            canMove = true;
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -102,11 +117,11 @@ public class PlayerController : MonoBehaviour
             gameOver.countdown = false;
             canMove = false;
             Destroy(collision.gameObject);
-            Invoke("nextLevel", 2f);
+            Invoke("NextLevel", 2f);
         }
     }
 
-    private void nextLevel()
+    private void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
