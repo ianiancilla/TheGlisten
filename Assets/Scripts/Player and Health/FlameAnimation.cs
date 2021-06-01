@@ -71,13 +71,17 @@ public class FlameAnimation : MonoBehaviour
 
     private void AnimateMovement()
     {
-
-        if (transform.position != previousPosition)
+        // using input instead of velocity to fix glitch that came up with characontroller edit. Ugly but no time
+        //if (transform.position != previousPosition)
+        if (Mathf.Abs(Input.GetAxis("Horizontal")) > Mathf.Epsilon)
         {
             Vector3 lastMovement = (transform.position - previousPosition).normalized;
 
+            // normalise to avoid glitching introduced by characontroller edits
+            lastMovement = lastMovement.normalized;
+
             flameSpriteRenderer.material.SetVector("_MovementSpeed", 
-                                                   new Vector4(lastMovement.x * velocityFlickerScaler,
+                                                   new Vector4(Input.GetAxis("Horizontal") * velocityFlickerScaler,
                                                                0,0,0));
 
             flameSpriteRenderer.transform.localScale = new Vector3(1 + Mathf.Abs(lastMovement.x * velocitySizeScaler),1,1);
