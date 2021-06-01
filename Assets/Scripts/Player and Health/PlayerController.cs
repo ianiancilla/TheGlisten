@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float jumpTimeCounter;
     private bool isJumping;
     public Target_Start cameraController;
+    public SFX_Manager sfxManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +28,8 @@ public class PlayerController : MonoBehaviour
         cameraController = FindObjectOfType<Target_Start>();
         gameOver.countdown = true;
         Invoke("Move", 2f);
-
+        sfxManager = FindObjectOfType<SFX_Manager>();
     }
-
-    
     
     // Update is called once per frame
     void Update()
@@ -51,6 +50,7 @@ public class PlayerController : MonoBehaviour
                 myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, jumpForce);
                 jumpTimeCounter = jumpTime;
                 isJumping = true;
+                sfxManager.jump.Play();
         }
 
             if (Input.GetButton("Jump") && isJumping == true){
@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
             {
                 myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, vertical * Time.deltaTime * climbSpeed);
             }
-
         }
     }
 
@@ -79,11 +78,8 @@ public class PlayerController : MonoBehaviour
         {
             //Remove Gravity so the player does not instantly fall while climbing.
             myRgbdy.gravityScale = 0f;
-
         }
-
     }
-
     private void OnTriggerStay2D(Collider2D collision)
     {//detects when the player is next to a ladder.
         if (collision.CompareTag("Ladder"))
@@ -111,19 +107,19 @@ public class PlayerController : MonoBehaviour
             myRgbdy.velocity = Vector2.zero;
             gameOver.countdown = false;
             canMove = false;
-            Debug.Log("Test");
+            sfxManager.countdown.Stop();
             
             Invoke("NextLevel", 2f);
         }
     }
 
     private void NextLevel()
-    {
+    {//Loads the next lecel of the game.
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     private void Move()
-    {
+    {//Allows the player to move after the camera has finished focusing on the goal.
         canMove = true;
         gameOver.countdown = true;
     }

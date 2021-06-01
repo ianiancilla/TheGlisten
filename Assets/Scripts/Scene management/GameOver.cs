@@ -11,6 +11,9 @@ public class GameOver : MonoBehaviour
  public Text timer;
  private string time;
  public bool countdown;
+ public GameObject player;
+ private SFX_Manager sfxManager;
+    private bool alarm;
   
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,8 @@ public class GameOver : MonoBehaviour
         timerCounter = timerLength;
         pc = FindObjectOfType<PlayerController>();
         countdown = false;
+        sfxManager = FindObjectOfType<SFX_Manager>();
+        alarm = true;
     }
 
     // Update is called once per frame
@@ -32,20 +37,32 @@ public class GameOver : MonoBehaviour
         {
             timerCounter -= Time.deltaTime;
         }
+        //Plays the heartbeat as time starts to run out.
+        if (timerCounter<= 8 && alarm==true)
+        {
+            sfxManager.countdown.Play();
+            alarm = false;
+            
+        }
 
         //What happens when the time runs out.
         if (timerCounter <= 0)
         {
             timerCounter = 0;
-            TriggerGameOver();
+           
         }
     }
 
     public void TriggerGameOver()
-    {
+    {//Activates Game OVer. Stop the player moving, loads the game over screen
+        //makes the player disappear.
         pc.canMove = false;
         gameOverScreen.SetActive(true);
+        player.SetActive(false);
     }
+
+   
+    
 
 }
 

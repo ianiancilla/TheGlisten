@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SFX_Manager : MonoBehaviour
 {
+    public AudioSource damage;
+    public AudioSource lessDamage;
+    public AudioSource jump;
+    public AudioSource countdown;
     // Start is called before the first frame update
     void Start()
     {

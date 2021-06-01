@@ -18,7 +18,7 @@ public class IceTrap : MonoBehaviour
     void Update()
     {
         if (myAnim.GetBool("Impact") == true)
-        {
+        {//Stops the ice from falling when it hits a platform / player. Destroys ice.
             myRgbdy.gravityScale = 0;
             myRgbdy.velocity = Vector2.zero;
             Invoke("DestroyIce", 0.5f);
@@ -28,7 +28,7 @@ public class IceTrap : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
+        {//Drops the ice when the player walks under it.
             myRgbdy.gravityScale = 1;
         }
                 
