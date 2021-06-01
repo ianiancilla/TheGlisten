@@ -6,9 +6,11 @@ public class Player_HealthGlisten : MonoBehaviour
 {
     // properties
     [SerializeField] float maxHealth = 10f;
-    [Tooltip ("The prefab of the light the player spawns when receiving damage")]
+    [SerializeField] bool takesDamagePerSecond = true;
+    [SerializeField] float damagePerSecond = 1f;
 
     [Header ("Health drops")]
+    [Tooltip("The prefab of the light the player spawns when receiving damage")]
     [SerializeField] GameObject healthDropPrefab;
     [Tooltip ("In degrees, amount of variance in the direction health drops will be launched at on damage")]
     [SerializeField] float healthDropDirectionNoise = 10f;
@@ -37,18 +39,23 @@ public class Player_HealthGlisten : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    private void Update()
+    {
+        //Makes the timer count down.
+        if (takesDamagePerSecond == true)
+        {
+            TakeDamage(Time.deltaTime * damagePerSecond);
+        }
+
+        DeathCheck();
+    }
 
     public void TakeDamage(float damageTaken)
     {
-        // check for death
-        if (damageTaken >= currentHealth)
-        {
-            Die();
-            return;
-        }
-
         // reduce health
         currentHealth -= damageTaken;
+
+        DeathCheck();
 
         // reduce light intensity proportionally to damage taken
         float damageProportion = damageTaken / maxHealth;
@@ -90,4 +97,16 @@ public class Player_HealthGlisten : MonoBehaviour
         FindObjectOfType<GameOver>().TriggerGameOver();
     }
 
+    private void DeathCheck()
+    {
+        // check for death
+        if (currentHealth <= 0)
+        {
+            Die();
+            return;
+        }
+    }
+
+    public float GetCurrentHealth () { return currentHealth; }
+    public float GetMaxHealth() { return maxHealth; }
 }
