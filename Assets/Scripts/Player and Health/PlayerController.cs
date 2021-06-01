@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         if (canMove==true)
         {
-            myRgbdy.velocity = new Vector2(horizontal * Time.deltaTime * moveSpeed,myRgbdy.velocity.y);
+            myRgbdy.velocity = new Vector2(horizontal* moveSpeed, myRgbdy.velocity.y);
 
             //Makes sure the player can only jump when they are on the ground.
             if (Input.GetButtonDown("Jump") && (Mathf.Abs(myRgbdy.velocity.y) < 0.001f))
