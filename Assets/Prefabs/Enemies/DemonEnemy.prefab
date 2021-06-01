@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 2
   moveRange: 6
-  homePosition: {fileID: 0}
+  homePosition: {fileID: 6694256182791046666}
   moveSpeed: 2
 --- !u!114 &4580228775854355206
 MonoBehaviour:

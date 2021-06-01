@@ -5,20 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
+    [SerializeField]
+    private float moveSpeed;
     private Rigidbody2D myRgbdy;
     private float horizontal;
-    public float jumpForce;
+    [SerializeField]
+    private float jumpForce;
     private float vertical;
     private bool climbing;
-    public float climbSpeed;
+    [SerializeField]
+    private float climbSpeed;
     public bool canMove;
     public GameOver gameOver;
-    public float jumpTime;
+    [SerializeField]
+    private float jumpTime;
     private float jumpTimeCounter;
     private bool isJumping;
     public Target_Start cameraController;
-    public SFX_Manager sfxManager;
+    private SFX_Manager sfxManager;
     // Start is called before the first frame update
     void Start()
     {
