@@ -56,6 +56,7 @@ public class GameOver : MonoBehaviour
         pc.canMove = false;
         gameOverScreen.SetActive(true);
         player.SetActive(false);
+        sfxManager.countdown.Stop();
     }
 
     // trimmed timer text code

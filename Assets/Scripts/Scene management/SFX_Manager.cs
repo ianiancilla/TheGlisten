@@ -8,6 +8,7 @@ public class SFX_Manager : MonoBehaviour
     public AudioSource lessDamage;
     public AudioSource jump;
     public AudioSource countdown;
+    public AudioSource litTorch;
     // Start is called before the first frame update
     void Start()
     {

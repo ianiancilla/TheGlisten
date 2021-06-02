@@ -7,21 +7,31 @@ public class Ghost_Teleport_Script : MonoBehaviour
     public Transform position1;
     public Transform position2;
     public Transform position3;
-    public float ghostStayLength;
+    [SerializeField]
+    float ghostStayLength;
     private float ghostStayLengthCounter;
     Animator myAnim;
     private int teleportLocation;
+    private Transform target;
+   private bool isCountingDown;
+    [SerializeField]
+     float moveSpeed;
+    [SerializeField]
+    float targetRange;
     // Start is called before the first frame update
     void Start()
     {
+        isCountingDown = true;
         ghostStayLengthCounter = ghostStayLength;
         myAnim = GetComponent<Animator>();
+        target = FindObjectOfType<PlayerController>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {//Set a timer for how lonh the ghost will stay in one place.
-        ghostStayLengthCounter -= Time.deltaTime;
+        if (isCountingDown) {
+            ghostStayLengthCounter -= Time.deltaTime; }
         if (ghostStayLengthCounter <= 1)
         {
             myAnim.SetBool("Teleport", true);
@@ -30,7 +40,8 @@ public class Ghost_Teleport_Script : MonoBehaviour
         if (ghostStayLengthCounter <= 0)
         {//When the timer hits zero change the animations and have him randomly appear in one of
             //three defined places.
-            myAnim.SetBool("Teleport", false);
+            myAnim.SetBool("Teleport", false)
+                ;
             myAnim.SetBool("Appear", true);
             ghostStayLengthCounter = ghostStayLength;
             teleportLocation = Random.Range(1, 4);
@@ -47,14 +58,64 @@ public class Ghost_Teleport_Script : MonoBehaviour
             if (teleportLocation == 3)
             {
                 transform.position = position3.position;
-            }              
+            }
         }
 
 
-        if (ghostStayLengthCounter<= ghostStayLength-1)
+        if (ghostStayLengthCounter <= ghostStayLength - 1)
         {//change the animations for when he has finished reappearing.
             myAnim.SetBool("Idle", true);
             myAnim.SetBool("Appear", false);
         }
+        //Make the Ghost follow the player if they get too close;
+        if (Vector3.Distance(target.position, transform.position) <= targetRange)
+        {//The ghost will only follow if he has fully appeared
+            if (ghostStayLengthCounter > 1)
+            {
+                if (ghostStayLengthCounter < ghostStayLength - 1)
+                {
+                    {
+                        isCountingDown = false;
+
+
+                        transform.position = Vector3.MoveTowards(transform.position,
+                        target.transform.position, moveSpeed * Time.deltaTime);
+
+                        //Changes the animation of the ghost to follow the player.
+                        if ((target.position.x - transform.position.x) < -0.1)
+                        {
+                            myAnim.SetBool("Left", true);
+                            myAnim.SetBool("Right", false);
+                        }
+
+                        if ((target.position.x - transform.position.x) > 0.01)
+                        {
+                            myAnim.SetBool("Right", true);
+                            myAnim.SetBool("Left", false);
+                        }
+
+                    }
+                }
+            }
+        }
+                     //Make the Ghost teleport away if the player escapes.
+                if (Vector3.Distance(target.position, transform.position) >targetRange)
+        {
+            if (isCountingDown == false)
+            {
+               
+                isCountingDown = true;
+                ghostStayLengthCounter = 1;
+                transform.position = transform.position;
+                myAnim.SetBool("Right", false);
+                myAnim.SetBool("Left", false);
+            }
+
+
+                
+            
+            
+        }
+
     }
 }
