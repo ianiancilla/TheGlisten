@@ -4,65 +4,74 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
-{public float timerLength;
- private float timerCounter;
- private PlayerController pc;
- public GameObject gameOverScreen;
- public Text timer;
- private string time;
- public bool countdown;
- public GameObject player;
- private SFX_Manager sfxManager;
+{
+    // properties
+    public GameObject gameOverScreen;
+    public GameObject player;
+    [Tooltip ("At what percentage of health left the heartbeat alarm will be triggered.")]
+    [SerializeField] float healthPercentageForAlarm = 10;
+
+    // variables
+    public bool countdown;
     private bool alarm;
-  
+    private float alarmThreshold;
+
+    // cache
+    private PlayerController pc;
+    private Player_HealthGlisten playerHealth;
+    private SFX_Manager sfxManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        timerCounter = timerLength;
+        // cache
         pc = FindObjectOfType<PlayerController>();
-        countdown = false;
+        playerHealth = pc.GetComponent<Player_HealthGlisten>();
         sfxManager = FindObjectOfType<SFX_Manager>();
+
+        // set starting state
+        countdown = false;
         alarm = true;
+
+        alarmThreshold = (playerHealth.GetMaxHealth() * healthPercentageForAlarm) / 100f;
     }
 
     // Update is called once per frame
     void Update()
-    {// Adding code so the time is displayed with no decimal points on screen.
-       
-        time = timerCounter.ToString("F0");
-        timer.text = "" + time;
-
-        //Makes the timer count down.
-        if (countdown == true)
-        {
-            timerCounter -= Time.deltaTime;
-        }
+    {
         //Plays the heartbeat as time starts to run out.
-        if (timerCounter<= 8 && alarm==true)
+        bool isDying = playerHealth.GetCurrentHealth() <= alarmThreshold;
+        if (isDying && alarm==true)
         {
             sfxManager.countdown.Play();
-            alarm = false;
-            
+            alarm = false;       
         }
 
-        //What happens when the time runs out.
-        if (timerCounter <= 0)
-        {
-            timerCounter = 0;
-           
-        }
     }
 
     public void TriggerGameOver()
-    {//Activates Game OVer. Stop the player moving, loads the game over screen
+    {
+        //Activates Game OVer. Stop the player moving, loads the game over screen
         //makes the player disappear.
         pc.canMove = false;
         gameOverScreen.SetActive(true);
         player.SetActive(false);
     }
 
-   
-    
+    // trimmed timer text code
+    //public Text timer;
+    //public float timerLength;
+    //private string time;
+    //private float timerCounter;
+
+
+    // in start
+    // timerCounter = timerLength;
+
+    // in update
+    // Adding code so the time is displayed with no decimal points on screen.
+    //time = timerCounter.ToString("F0");
+    //timer.text = "" + time;
 
 }
 

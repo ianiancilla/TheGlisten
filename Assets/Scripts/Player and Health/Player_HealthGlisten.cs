@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_HealthGlisten : MonoBehaviour
 {
     // properties
     [SerializeField] float maxHealth = 10f;
-    [Tooltip ("The prefab of the light the player spawns when receiving damage")]
+    [SerializeField] bool takesDamagePerSecond = true;
+    [SerializeField] float damagePerSecond = 1f;
+
+    [Header("UI")]
+    [SerializeField] Image oxygenGauge;
 
     [Header ("Health drops")]
+    [Tooltip("The prefab of the light the player spawns when receiving damage")]
     [SerializeField] GameObject healthDropPrefab;
     [Tooltip ("In degrees, amount of variance in the direction health drops will be launched at on damage")]
     [SerializeField] float healthDropDirectionNoise = 10f;
@@ -35,32 +41,57 @@ public class Player_HealthGlisten : MonoBehaviour
     {
         lightIntensityMax = playerLight.GetIntensity();
         currentHealth = maxHealth;
+        UpdateOxygenGauge();
     }
 
+    private void Update()
+    {
+        //Makes the timer count down.
+        if (takesDamagePerSecond)
+        {
+            TakeDamage(Time.deltaTime * damagePerSecond);
+        }
+    }
 
+    private void UpdateOxygenGauge()
+    {
+        // update gauge
+        oxygenGauge.fillAmount = currentHealth / maxHealth;
+    }
+
+    /// <summary>
+    /// Used to both deal and heal damage! pisitive numbers deal damage,
+    /// negative numbers will heal the player.
+    /// Player cannot go over starting health score.
+    /// </summary>
+    /// <param name="damageTaken"></param>
     public void TakeDamage(float damageTaken)
     {
-        // check for death
-        if (damageTaken >= currentHealth)
-        {
-            Die();
-            return;
-        }
-
         // reduce health
         currentHealth -= damageTaken;
 
+        // check for overhealing
+        if (currentHealth > maxHealth) { currentHealth = maxHealth; }
+
+        UpdateOxygenGauge();
+
+        DeathCheck();
+
         // reduce light intensity proportionally to damage taken
-        float damageProportion = damageTaken / maxHealth;
-        float intensityChange = lightIntensityMax * damageProportion;
-        playerLight.SetIntensity(playerLight.GetIntensity() - intensityChange);
+        float newIntensity = lightIntensityMax * (currentHealth / maxHealth);
+        playerLight.SetIntensity(newIntensity);
 
-        // trigger animation
-        flameAnimation.AnimateDamage();
 
-        // spawn a HealthDrop for each point of damage taken, and make them fly off like Sonic rings
-        int numberOfDrops = (int)damageTaken;
-        SpawnHealthDrops(numberOfDrops);
+        // stuff that only happens on monster collisions. This is ugly and dirty I KNOW
+        if (damageTaken > damagePerSecond*Time.deltaTime *2)
+        {
+            // trigger animation
+            flameAnimation.AnimateDamage();
+
+            // spawn a HealthDrop for each point of damage taken, and make them fly off like Sonic rings
+            int numberOfDrops = (int)damageTaken;
+            SpawnHealthDrops(numberOfDrops);
+        }
     }
 
     private void SpawnHealthDrops(int numberOfDrops)
@@ -90,4 +121,16 @@ public class Player_HealthGlisten : MonoBehaviour
         FindObjectOfType<GameOver>().TriggerGameOver();
     }
 
+    private void DeathCheck()
+    {
+        // check for death
+        if (currentHealth <= 0)
+        {
+            Die();
+            return;
+        }
+    }
+
+    public float GetCurrentHealth () { return currentHealth; }
+    public float GetMaxHealth() { return maxHealth; }
 }
