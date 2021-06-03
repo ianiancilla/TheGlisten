@@ -7,7 +7,6 @@ public class GameOver : MonoBehaviour
 {
     // properties
     public GameObject gameOverScreen;
-    public GameObject player;
     [Tooltip ("At what percentage of health left the heartbeat alarm will be triggered.")]
     [SerializeField] float healthPercentageForAlarm = 10;
 
@@ -20,7 +19,9 @@ public class GameOver : MonoBehaviour
     private PlayerController pc;
     private Player_HealthGlisten playerHealth;
     private SFX_Manager sfxManager;
-    public GameObject flame;
+    private SpriteRenderer flameSprite;
+    private GameObject player;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,8 @@ public class GameOver : MonoBehaviour
         pc = FindObjectOfType<PlayerController>();
         playerHealth = pc.GetComponent<Player_HealthGlisten>();
         sfxManager = FindObjectOfType<SFX_Manager>();
+        flameSprite = playerHealth.gameObject.GetComponentInChildren<SpriteRenderer>();
+        player = playerHealth.gameObject;
 
         // set starting state
         countdown = false;
@@ -56,7 +59,7 @@ public class GameOver : MonoBehaviour
         //makes the player disappear.
         pc.canMove = false;
         gameOverScreen.SetActive(true);
-        flame.GetComponent<SpriteRenderer>().flipX = true;
+        flameSprite.flipX = true;
         player.SetActive(false);
         sfxManager.countdown.Stop();
     }

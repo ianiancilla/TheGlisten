@@ -21,10 +21,14 @@ public class HealthPickUp : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player_HealthGlisten playerHealth = collision.gameObject.GetComponent<Player_HealthGlisten>();
+        playerHealth = collision.gameObject.GetComponent<Player_HealthGlisten>();
         if (playerHealth)
         {
-            sfxManager.healthIncrease.Play();
+            AudioSource audio = sfxManager.healthIncrease;
+            if (audio)
+            {
+                audio.Play();
+            }
             playerHealth.TakeDamage(healtIncrease);
             Destroy(gameObject);
         }

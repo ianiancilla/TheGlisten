@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3896784099583232591}
   - component: {fileID: 6929163467058853899}
   - component: {fileID: 9045536277434874918}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6945435931059610737}
   - component: {fileID: 4009323223630854853}
   - component: {fileID: 4579806199036903317}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
