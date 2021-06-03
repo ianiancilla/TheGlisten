@@ -6,10 +6,12 @@ public class HealthPickUp : MonoBehaviour
 {
     [SerializeField] float healtIncrease = -5f;
     private Player_HealthGlisten playerHealth;
+    SFX_Manager sfxManager;
     // Start is called before the first frame update
     void Start()
     {
         playerHealth = FindObjectOfType<Player_HealthGlisten>();
+        sfxManager = FindObjectOfType<SFX_Manager>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class HealthPickUp : MonoBehaviour
         Player_HealthGlisten playerHealth = collision.gameObject.GetComponent<Player_HealthGlisten>();
         if (playerHealth)
         {
+            sfxManager.healthIncrease.Play();
             playerHealth.TakeDamage(healtIncrease);
             Destroy(gameObject);
         }

@@ -11,6 +11,8 @@ public class SFX_Manager : MonoBehaviour
     public AudioSource litTorch;
     public AudioSource iceBreak;
     public AudioSource bearTrap;
+    public AudioSource victory;
+    public AudioSource healthIncrease;
     // Start is called before the first frame update
     void Start()
     {

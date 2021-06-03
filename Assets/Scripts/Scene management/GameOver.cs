@@ -20,6 +20,7 @@ public class GameOver : MonoBehaviour
     private PlayerController pc;
     private Player_HealthGlisten playerHealth;
     private SFX_Manager sfxManager;
+    public GameObject flame;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,7 @@ public class GameOver : MonoBehaviour
         //makes the player disappear.
         pc.canMove = false;
         gameOverScreen.SetActive(true);
+        flame.GetComponent<SpriteRenderer>().flipX = true;
         player.SetActive(false);
         sfxManager.countdown.Stop();
     }
