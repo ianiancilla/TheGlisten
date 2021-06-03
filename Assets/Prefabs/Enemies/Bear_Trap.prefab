@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c105dd1db7bccd48a18b55835051f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 1
+  damageDealt: 25
   destroyedOnCollision: 0
 --- !u!1 &3391110942171489175
 GameObject:
@@ -194,7 +194,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6666667, y: 0.46666667}
+    oldSize: {x: 1, y: 0.7}
     newSize: {x: 0.5714286, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

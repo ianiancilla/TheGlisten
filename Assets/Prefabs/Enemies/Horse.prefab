@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5703702649613277604}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Horse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5703702649675966614}
   - component: {fileID: 5703702649675966615}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightTurn
   m_TagString: Right
   m_Icon: {fileID: 0}
@@ -57,8 +57,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5703702649675966608}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.12, y: -2.09, z: -1.3901906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.93, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5703702649613277604}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5703702650632870248}
   - component: {fileID: 5703702650632870249}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftTurn
   m_TagString: Left
   m_Icon: {fileID: 0}
@@ -114,8 +114,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5703702650632870250}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7199998, y: -2.16, z: -1.3901906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5703702649613277604}
@@ -154,13 +154,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5703702649613277604}
     m_Modifications:
+    - target: {fileID: 888259848, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 910007164, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
       propertyPath: damageDealt
-      value: 8
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 910007164, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
       propertyPath: destroyedOnCollision
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135529417, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
@@ -175,12 +183,12 @@ PrefabInstance:
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6544148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.8530455
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
@@ -190,17 +198,17 @@ PrefabInstance:
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
@@ -221,6 +229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Horse_Nightmare
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077665666667600230, guid: 8206397988f81d5409c8f387df1ab07c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
