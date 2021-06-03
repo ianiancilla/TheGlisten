@@ -158,6 +158,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 888259849, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 888259849, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.371
+      objectReference: {fileID: 0}
+    - target: {fileID: 888259850, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 888259850, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 888259850, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 910007164, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
       propertyPath: damageDealt
       value: 25
@@ -169,6 +189,41 @@ PrefabInstance:
     - target: {fileID: 1135529417, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135529418, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135529418, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.081
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135529419, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135529419, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135529419, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120761508740933848, guid: 8206397988f81d5409c8f387df1ab07c,
+        type: 3}
+      propertyPath: noiseScale
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120761508740933848, guid: 8206397988f81d5409c8f387df1ab07c,
+        type: 3}
+      propertyPath: flickerSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120761508740933848, guid: 8206397988f81d5409c8f387df1ab07c,
+        type: 3}
+      propertyPath: startingIntensity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2330754286259674878, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
@@ -224,6 +279,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975811847617040815, guid: 8206397988f81d5409c8f387df1ab07c,
+        type: 3}
+      propertyPath: noiseScale
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975811847617040815, guid: 8206397988f81d5409c8f387df1ab07c,
+        type: 3}
+      propertyPath: flickerSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975811847617040815, guid: 8206397988f81d5409c8f387df1ab07c,
+        type: 3}
+      propertyPath: startingIntensity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9077665666667600230, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
