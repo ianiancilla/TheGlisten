@@ -12,6 +12,8 @@ public class DemonController : MonoBehaviour
     public Transform homePosition;
     public float moveSpeed;
     private BoxCollider2D myBoxC;
+
+    PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,54 +21,57 @@ public class DemonController : MonoBehaviour
         myAnim = GetComponent<Animator>();
         canMove = true;
         myBoxC = GetComponent<BoxCollider2D>();
-     
+        playerController = FindObjectOfType<PlayerController>();
 
     }
 
     // Update is called once per frame
     void Update()
     {//The Enemy will chase the player when they are in a certain range.
-        if (Vector3.Distance(target.position, transform.position) <= moveRange)
+        if (playerController.victory == false)
         {
-            if (canMove)
+            if (Vector3.Distance(target.position, transform.position) <= moveRange)
             {
-                FollowPlayer();
+                if (canMove)
+                {
+                    FollowPlayer();
 
+                }
             }
-             }
 
-        //When the Player lleaves that range they will go back to a Home Position.
-        if (Vector3.Distance(target.position, transform.position) >= moveRange)
-        {
-            if (canMove)
+            //When the Player lleaves that range they will go back to a Home Position.
+            if (Vector3.Distance(target.position, transform.position) >= moveRange)
             {
-                GoHome();
+                if (canMove)
+                {
+                    GoHome();
+                }
+            }
+
+
+
+            //If the enemy gets real close to the player, they will do the flame attck.
+            if (Vector3.Distance(target.position, transform.position) < attackRange)
+
+            {
+
+                if ((target.position.x - transform.position.x) < -0.1)
+                {
+                    myAnim.SetBool("AttackLeft", true);
+                    canMove = false;
+                    Invoke("StopAttackLeft", 2f);
+
+                }
+
+                if ((target.position.x - transform.position.x) > 0.01)
+                {
+
+                    myAnim.SetBool("AttackRight", true);
+                    canMove = false;
+                    Invoke("StopAttckRight", 2f);
+                }
             }
         }
-
-
-
-        //If the enemy gets real close to the player, they will do the flame attck.
-        if (Vector3.Distance(target.position, transform.position) < attackRange)
-
-          {
-              
-              if ((target.position.x - transform.position.x) < -0.1)
-              {
-                  myAnim.SetBool("AttackLeft", true);
-                  canMove = false;
-                Invoke("StopAttackLeft", 2f);
-               
-              }
-
-              if ((target.position.x - transform.position.x) > 0.01)
-              {
-
-                  myAnim.SetBool("AttackRight", true);
-                  canMove = false;
-                Invoke("StopAttckRight", 2f);
-              }          
-          }
     }
 
 

@@ -18,6 +18,8 @@ public class Ghost_Teleport_Script : MonoBehaviour
      float moveSpeed;
     [SerializeField]
     float targetRange;
+
+    PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +27,14 @@ public class Ghost_Teleport_Script : MonoBehaviour
         ghostStayLengthCounter = ghostStayLength;
         myAnim = GetComponent<Animator>();
         target = FindObjectOfType<PlayerController>().transform;
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {//Set a timer for how lonh the ghost will stay in one place.
+        if (playerController.victory == false) { 
+        
         if (isCountingDown) {
             ghostStayLengthCounter -= Time.deltaTime; }
         if (ghostStayLengthCounter <= 1)
@@ -98,20 +103,20 @@ public class Ghost_Teleport_Script : MonoBehaviour
                 }
             }
         }
-                     //Make the Ghost teleport away if the player escapes.
-                if (Vector3.Distance(target.position, transform.position) >targetRange)
-        {
-            if (isCountingDown == false)
+            //Make the Ghost teleport away if the player escapes.
+            if (Vector3.Distance(target.position, transform.position) > targetRange)
             {
-               
-                isCountingDown = true;
-                ghostStayLengthCounter = 1;
-                transform.position = transform.position;
-                myAnim.SetBool("Right", false);
-                myAnim.SetBool("Left", false);
+                if (isCountingDown == false)
+                {
+
+                    isCountingDown = true;
+                    ghostStayLengthCounter = 1;
+                    transform.position = transform.position;
+                    myAnim.SetBool("Right", false);
+                    myAnim.SetBool("Left", false);
+                }
+
             }
-
-
                 
             
             

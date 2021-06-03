@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
@@ -23,7 +24,9 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     public Target_Start cameraController;
     private SFX_Manager sfxManager;
-    // Start is called before the first frame update
+    public bool victory;
+    public GameObject flame;
+        // Start is called before the first frame update
     void Start()
     {
         myRgbdy = gameObject.GetComponent<Rigidbody2D>();
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
         gameOver.countdown = true;
         Invoke("Move", 2f);
         sfxManager = FindObjectOfType<SFX_Manager>();
+        victory = true;
     }
     
     // Update is called once per frame
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour
                 jumpTimeCounter = jumpTime;
                 isJumping = true;
                 sfxManager.jump.Play();
+                
         }
 
             if (Input.GetButton("Jump") && isJumping == true){
@@ -112,8 +117,10 @@ public class PlayerController : MonoBehaviour
             gameOver.countdown = false;
             canMove = false;
             sfxManager.countdown.Stop();
-            
+            sfxManager.victory.Play();
+            victory = true;
             Invoke("NextLevel", 2f);
+            flame.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
@@ -126,6 +133,7 @@ public class PlayerController : MonoBehaviour
     {//Allows the player to move after the camera has finished focusing on the goal.
         canMove = true;
         gameOver.countdown = true;
+        victory = false;
     }
 }
 
