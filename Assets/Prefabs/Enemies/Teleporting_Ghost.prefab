@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 1
-  destroyedOnCollision: 0
+  destroyedOnCollision: 1
 --- !u!1 &3844120681850737428
 GameObject:
   m_ObjectHideFlags: 0
