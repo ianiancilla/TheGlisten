@@ -22,14 +22,14 @@ public class LightFlicker : MonoBehaviour
 
     private void Awake()
     {
-        myLight = GetComponent<Light2D>();
-
-        myLight.intensity = startingIntensity;
-        intensity = myLight.intensity;
+        InitialiseLight();
     }
+
 
     private void Start()
     {
+        if (!myLight) { InitialiseLight(); }
+
         noiseOffset = Random.Range(0f, 3f);
     }
 
@@ -38,6 +38,15 @@ public class LightFlicker : MonoBehaviour
     {
         if (isFlickering) { Flicker(); }
     }
+
+    private void InitialiseLight()
+    {
+        myLight = GetComponent<Light2D>();
+
+        myLight.intensity = startingIntensity;
+        intensity = myLight.intensity;
+    }
+
 
     private void Flicker()
     {
