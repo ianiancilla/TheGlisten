@@ -817,3 +817,4 @@ MonoBehaviour:
   countdown: {fileID: 6921722443331214287}
   litTorch: {fileID: 7006375308670974386}
   iceBreak: {fileID: 0}
+  bearTrap: {fileID: 0}
