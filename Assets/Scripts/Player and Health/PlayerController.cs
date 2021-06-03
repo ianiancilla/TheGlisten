@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         gameOver = FindObjectOfType<GameOver>();
         cameraController = FindObjectOfType<Target_Start>();
-        gameOver.countdown = true;
+        gameOver.alarmWhenLowHealth = true;
         Invoke("Move", 2f);
         sfxManager = FindObjectOfType<SFX_Manager>();
         victory = true;
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Target"))
         {
             myRgbdy.velocity = Vector2.zero;
-            gameOver.countdown = false;
+            gameOver.alarmWhenLowHealth = false;
             canMove = false;
             sfxManager.countdown.Stop();
             sfxManager.victory.Play();
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {//Allows the player to move after the camera has finished focusing on the goal.
         canMove = true;
-        gameOver.countdown = true;
+        gameOver.alarmWhenLowHealth = true;
         victory = false;
     }
 }

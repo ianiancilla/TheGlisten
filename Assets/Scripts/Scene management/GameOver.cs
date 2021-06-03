@@ -11,8 +11,8 @@ public class GameOver : MonoBehaviour
     [SerializeField] float healthPercentageForAlarm = 10;
 
     // variables
-    public bool countdown;
-    private bool alarm;
+    public bool alarmWhenLowHealth;
+    private bool isAlarmPlaying;
     private float alarmThreshold;
 
     // cache
@@ -34,8 +34,8 @@ public class GameOver : MonoBehaviour
         player = playerHealth.gameObject;
 
         // set starting state
-        countdown = false;
-        alarm = true;
+        alarmWhenLowHealth = true;
+        isAlarmPlaying = false;
 
         alarmThreshold = (playerHealth.GetMaxHealth() * healthPercentageForAlarm) / 100f;
     }
@@ -44,12 +44,20 @@ public class GameOver : MonoBehaviour
     void Update()
     {
         //Plays the heartbeat as time starts to run out.
-        bool isDying = playerHealth.GetCurrentHealth() <= alarmThreshold;
-        if (isDying && alarm==true)
+        bool isLowHealth = playerHealth.GetCurrentHealth() <= alarmThreshold;
+
+        if (isLowHealth && !isAlarmPlaying)
         {
             sfxManager.countdown.Play();
-            alarm = false;       
+            isAlarmPlaying = true;       
         }
+
+        else if (!isLowHealth && isAlarmPlaying)
+        {
+            sfxManager.countdown.Stop();
+            isAlarmPlaying = false;
+        }
+
 
     }
 
