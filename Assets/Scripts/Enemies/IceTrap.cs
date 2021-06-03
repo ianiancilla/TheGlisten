@@ -7,11 +7,13 @@ public class IceTrap : MonoBehaviour
     public Animator myAnim;
     Rigidbody2D myRgbdy;
     public BoxCollider2D iceBox;
+ 
     // Start is called before the first frame update
     void Start()
     {
         
         myRgbdy=GetComponent<Rigidbody2D>();
+      
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class IceTrap : MonoBehaviour
         {//Stops the ice from falling when it hits a platform / player. Destroys ice.
             myRgbdy.gravityScale = 0;
             myRgbdy.velocity = Vector2.zero;
+            
             Invoke("DestroyIce", 0.5f);
         }
     }
@@ -30,6 +33,7 @@ public class IceTrap : MonoBehaviour
         if (collision.CompareTag("Player"))
         {//Drops the ice when the player walks under it.
             myRgbdy.gravityScale = 1;
+            
         }
                 
     }

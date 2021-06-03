@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class IceImpact : MonoBehaviour
 {
-   Animator myAnim;
+    SFX_Manager sfxManager;
+    Animator myAnim;
    
     // Start is called before the first frame update
     void Start()
     {
         myAnim = gameObject.GetComponent<Animator>();
+        sfxManager = FindObjectOfType<SFX_Manager>();
       
     }
 
@@ -19,6 +21,7 @@ public class IceImpact : MonoBehaviour
         if (collision.CompareTag("Player") || collision.CompareTag("Floor"))
         {
             myAnim.SetBool("Impact", true);
+            sfxManager.iceBreak.Play();
 
         }
     }

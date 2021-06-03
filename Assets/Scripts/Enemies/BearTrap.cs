@@ -5,11 +5,13 @@ using UnityEngine;
 public class BearTrap : MonoBehaviour
 {
     private Animator myAnim;
+    SFX_Manager sfxManager;
     // Start is called before the first frame update
     void Start()
     {
         
         myAnim = GetComponent<Animator>();
+        sfxManager = FindObjectOfType<SFX_Manager>();
     }
 
    
@@ -17,6 +19,7 @@ public class BearTrap : MonoBehaviour
     {//Set the trap off when the player steps in it.
         if (collision.CompareTag("Player")){
             myAnim.SetBool("Trap", true);
+            sfxManager.bearTrap.Play();
             Invoke("TrapIdle", 1f);
         }
     }
