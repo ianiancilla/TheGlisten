@@ -22,7 +22,6 @@ public class HealthPickUp : MonoBehaviour
         Player_HealthGlisten playerHealth = collision.gameObject.GetComponent<Player_HealthGlisten>();
         if (playerHealth)
         {
-            Debug.Log("Test");
             playerHealth.TakeDamage(healtIncrease);
             Destroy(gameObject);
         }

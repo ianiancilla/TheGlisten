@@ -114,7 +114,10 @@ public class FlameAnimation : MonoBehaviour
 
     public void AnimateDamage()
     {
-        StartCoroutine(DamageAnimation());
+        if (flameSpriteRenderer.gameObject.activeSelf)
+        {
+            StartCoroutine(DamageAnimation());
+        }
     }
 
     IEnumerator DamageAnimation()
