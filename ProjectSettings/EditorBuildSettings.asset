@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Finalised/CreditsScreen.unity
     guid: 4bbe31e70a1f3f8488a58b482ca0f590
   - enabled: 1
+    path: Assets/Scenes/Finalised/Cutscene.unity
+    guid: 125ba0c4fcc2735439d0e2e436326a24
+  - enabled: 1
     path: Assets/Scenes/LEVELS/Test2.unity
     guid: 40fd499d74cd2654eb86998790ed6963
   - enabled: 1
