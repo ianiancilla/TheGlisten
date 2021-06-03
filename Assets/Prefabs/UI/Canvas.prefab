@@ -926,6 +926,7 @@ MonoBehaviour:
   player: {fileID: 0}
   healthPercentageForAlarm: 10
   countdown: 0
+  flame: {fileID: 0}
 --- !u!1001 &3318142555153669092
 PrefabInstance:
   m_ObjectHideFlags: 0

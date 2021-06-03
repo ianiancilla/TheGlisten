@@ -56,12 +56,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 36.214386, y: 21.378681}
-      - {x: -16.438618, y: 21.356174}
-      - {x: -16.325027, y: -8.313202}
-      - {x: 0.4436527, y: -9.06759}
-      - {x: 35.99234, y: -7.713967}
-      - {x: 36.500893, y: 0.78999704}
+    - - {x: -49.5, y: -21.5}
+      - {x: -49.5, y: 7.5}
+      - {x: 3, y: 7.5}
+      - {x: 3, y: -21.5}
 --- !u!114 &1926018806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,12 +402,12 @@ PrefabInstance:
     - target: {fileID: 1723642600482115014, guid: c3aeef2aede3f484ca3663d8bc80a4d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.536152
+      value: 6.0907135
       objectReference: {fileID: 0}
     - target: {fileID: 1723642600482115014, guid: c3aeef2aede3f484ca3663d8bc80a4d3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.378252
+      value: 11.740286
       objectReference: {fileID: 0}
     - target: {fileID: 1723642600765244650, guid: c3aeef2aede3f484ca3663d8bc80a4d3,
         type: 3}
