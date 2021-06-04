@@ -60,7 +60,7 @@ public class GameOver : MonoBehaviour
         pc.canMove = false;
         gameOverScreen.SetActive(true);
         flameSprite.flipX = true;
-        player.SetActive(false);
+        //player.SetActive(false);
         sfxManager.countdown.Stop();
     }
 

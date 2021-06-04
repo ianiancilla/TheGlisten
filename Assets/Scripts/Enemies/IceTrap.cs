@@ -6,13 +6,15 @@ public class IceTrap : MonoBehaviour
 {
     public Animator myAnim;
     Rigidbody2D myRgbdy;
-    public BoxCollider2D iceBox;
+    SFX_Manager sfxManager;
+   
  
     // Start is called before the first frame update
     void Start()
     {
         
         myRgbdy=GetComponent<Rigidbody2D>();
+        sfxManager = FindObjectOfType<SFX_Manager>();
       
     }
 
@@ -23,7 +25,7 @@ public class IceTrap : MonoBehaviour
         {//Stops the ice from falling when it hits a platform / player. Destroys ice.
             myRgbdy.gravityScale = 0;
             myRgbdy.velocity = Vector2.zero;
-            
+            //sfxManager.iceBreak.Play();
             Invoke("DestroyIce", 0.5f);
         }
     }

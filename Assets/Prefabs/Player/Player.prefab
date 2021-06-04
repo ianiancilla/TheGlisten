@@ -167,7 +167,7 @@ MonoBehaviour:
   jumpTime: 0.35
   cameraController: {fileID: 0}
   victory: 0
-  flame: {fileID: 0}
+  flame: {fileID: 7390890326652608776}
 --- !u!114 &826966161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +316,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12473a572a0b60f44a48fc092d264688, type: 3}
+--- !u!1 &7390890326652608776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6617364905279368861, guid: 12473a572a0b60f44a48fc092d264688,
+    type: 3}
+  m_PrefabInstance: {fileID: 4414703862581022613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7390890326652608790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6617364905279368835, guid: 12473a572a0b60f44a48fc092d264688,

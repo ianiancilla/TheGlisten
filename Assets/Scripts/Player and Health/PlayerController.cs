@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
                 myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, jumpForce);
                 jumpTimeCounter = jumpTime;
                 isJumping = true;
+                
                 sfxManager.jump.Play();
                 
         }
