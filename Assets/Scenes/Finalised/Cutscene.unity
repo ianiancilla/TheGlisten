@@ -1037,6 +1037,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 318569597931614969, guid: 0db29668f1fb4af4da3c038150ae7354,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 946366250928506915, guid: 0db29668f1fb4af4da3c038150ae7354,
         type: 3}
       propertyPath: m_Name
@@ -1112,6 +1117,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4301485379772660707, guid: 0db29668f1fb4af4da3c038150ae7354,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4541817466752724360, guid: 0db29668f1fb4af4da3c038150ae7354,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1121,6 +1131,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913390943483953563, guid: 0db29668f1fb4af4da3c038150ae7354,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6796649776434348486, guid: 0db29668f1fb4af4da3c038150ae7354,
         type: 3}
@@ -18594,6 +18609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intro: 1
+  outro: 0
 --- !u!4 &5007970800372098186
 Transform:
   m_ObjectHideFlags: 0
