@@ -595,7 +595,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9151485457311868406}
-        m_MethodName: QuitGame
+        m_MethodName: OnApplicationQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -901,8 +901,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 9151485457311868404}
-  healthPercentageForAlarm: 10
-  countdown: 0
+  healthPercentageForAlarm: 15
+  alarmWhenLowHealth: 0
 --- !u!1001 &3318142555153669092
 PrefabInstance:
   m_ObjectHideFlags: 0
