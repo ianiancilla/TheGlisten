@@ -526,7 +526,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: https://stealthix.itch.io/animated-traps
+  m_text: 'https://stealthix.itch.io/animated-traps
+
+    https://gianmansuper.itch.io/pixel-torches?fbclid=IwAR2mG86MNX-yCQwpE0dSZoCFax9LLl_spP9A2A73YlR1xN8ysNhfunjWd2A'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -914,7 +916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Traps and hazards
+  m_text: Traps, hazards and obects
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1047,7 +1049,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: https://ansimuz.itch.io/gothicvania-patreon-collection
+  m_text: 'https://ansimuz.itch.io/gothicvania-patreon-collection
+
+    https://luizmelo.itch.io/evil-wizard
+
+    https://luizmelo.itch.io/huntress?fbclid=IwAR2V1GCC2ptnY69arheJvc-9bgTTdbQFRzwIT7Iy0mlb0nuMb-2v2tAHd1Q'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1180,7 +1186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main enemy sprites
+  m_text: Character and enemy sprites
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2541,7 +2547,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: https://piposchpatz.itch.io/tileset-platformer-2d-pixel-art
+  m_text: 'https://piposchpatz.itch.io/tileset-platformer-2d-pixel-art
+
+    https://untiedgames.itch.io/super-pixel-cave-tileset'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

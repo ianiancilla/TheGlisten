@@ -164,7 +164,7 @@ MonoBehaviour:
   climbSpeed: 250
   canMove: 0
   gameOver: {fileID: 0}
-  jumpTime: 0.35
+  jumpTime: 0.38
   cameraController: {fileID: 0}
   victory: 0
   flame: {fileID: 7390890326652608776}
