@@ -21,11 +21,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpTime;
     private float jumpTimeCounter;
-    private bool isJumping;
+  private bool isJumping;
     public Target_Start cameraController;
     private SFX_Manager sfxManager;
     public bool victory;
     public GameObject flame;
+    [SerializeField] LayerMask platformLayerMask;
+  
         // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +39,14 @@ public class PlayerController : MonoBehaviour
         Invoke("Move", 2f);
         sfxManager = FindObjectOfType<SFX_Manager>();
         victory = true;
+      
+
     }
     
     // Update is called once per frame
     void Update()
     {
-        
+       
         // Moves the player left or right at a certain speed.
 
         horizontal = Input.GetAxis("Horizontal");
@@ -52,7 +56,7 @@ public class PlayerController : MonoBehaviour
             myRgbdy.velocity = new Vector2(horizontal* moveSpeed, myRgbdy.velocity.y);
 
             //Makes sure the player can only jump when they are on the ground.
-            if (Input.GetButtonDown("Jump") && (Mathf.Abs(myRgbdy.velocity.y) < 0.001f))
+            if (Input.GetButtonDown("Jump") && isGrounded())
         {
                 //myRgbdy.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
                 myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, jumpForce);
@@ -135,6 +139,27 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         gameOver.alarmWhenLowHealth = true;
         victory = false;
+    }
+
+    private bool isGrounded()
+    {
+        float extraHeight = 0.5f;
+        CapsuleCollider2D circleCollider2D = GetComponent<CapsuleCollider2D>();
+        
+        RaycastHit2D raycastHit = Physics2D.CapsuleCast(circleCollider2D.bounds.center, circleCollider2D.bounds.size, CapsuleDirection2D.Vertical,
+           0f, Vector2.down, circleCollider2D.bounds.extents.y + extraHeight, platformLayerMask);
+        /* if (raycastHit != null)
+        {
+        rayColour= Color.green;
+        }
+        else { rayColour = Color.red; }}*/
+
+        Debug.DrawRay(circleCollider2D.bounds.center, Vector2.down * (circleCollider2D.bounds.extents.y
+            + extraHeight));
+        return raycastHit.collider != null;
+        
+
+           
     }
 }
 

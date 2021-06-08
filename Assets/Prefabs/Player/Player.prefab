@@ -168,6 +168,9 @@ MonoBehaviour:
   cameraController: {fileID: 0}
   victory: 0
   flame: {fileID: 7390890326652608776}
+  platformLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!114 &826966161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +191,7 @@ MonoBehaviour:
     type: 3}
   healthDropDirectionNoise: 20
   healthDropScatterForce: 5
-  healthDropVerticalForceScaler: 1.5
+  healthDropVerticalForceScaler: 3
 --- !u!114 &6725335085911164406
 MonoBehaviour:
   m_ObjectHideFlags: 0
