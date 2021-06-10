@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public bool victory;
     public GameObject flame;
     [SerializeField] LayerMask platformLayerMask;
-  
+   
         // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
        
         // Moves the player left or right at a certain speed.
 
@@ -141,21 +142,15 @@ public class PlayerController : MonoBehaviour
         victory = false;
     }
 
-    private bool isGrounded()
+   private bool isGrounded()
     {
-        float extraHeight = 0.5f;
+        
         CapsuleCollider2D circleCollider2D = GetComponent<CapsuleCollider2D>();
         
         RaycastHit2D raycastHit = Physics2D.CapsuleCast(circleCollider2D.bounds.center, circleCollider2D.bounds.size, CapsuleDirection2D.Vertical,
-           0f, Vector2.down, circleCollider2D.bounds.extents.y + extraHeight, platformLayerMask);
-        /* if (raycastHit != null)
-        {
-        rayColour= Color.green;
-        }
-        else { rayColour = Color.red; }}*/
+           0f, Vector2.down, circleCollider2D.bounds.extents.y-0.1f, platformLayerMask);
+       
 
-        Debug.DrawRay(circleCollider2D.bounds.center, Vector2.down * (circleCollider2D.bounds.extents.y
-            + extraHeight));
         return raycastHit.collider != null;
         
 
