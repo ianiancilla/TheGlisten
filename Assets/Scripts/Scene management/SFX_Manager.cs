@@ -13,6 +13,7 @@ public class SFX_Manager : MonoBehaviour
     public AudioSource bearTrap;
     public AudioSource victory;
     public AudioSource healthIncrease;
+    public AudioSource ghostNoise;
     // Start is called before the first frame update
     void Start()
     {
