@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.08897638}
+  m_Offset: {x: 0, y: 0.103471756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59352875, y: 0.44071865}
+  m_Size: {x: 0.99541855, y: 0.4117279}
   m_EdgeRadius: 0
 --- !u!114 &3391110941421842694
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c105dd1db7bccd48a18b55835051f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 25
+  damageDealt: 20
   destroyedOnCollision: 0
 --- !u!1 &3391110942171489175
 GameObject:
@@ -223,6 +223,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3391110942171489194}
     m_Modifications:
+    - target: {fileID: 2678593843826522578, guid: b65b8d0e99341984cbc6567af5ad5303,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2678593843826522588, guid: b65b8d0e99341984cbc6567af5ad5303,
         type: 3}
       propertyPath: m_RootOrder

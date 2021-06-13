@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 910007164, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
       propertyPath: damageDealt
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 910007164, guid: 8206397988f81d5409c8f387df1ab07c, type: 3}
       propertyPath: destroyedOnCollision
@@ -279,6 +279,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389721327374756262, guid: 8206397988f81d5409c8f387df1ab07c,
+        type: 3}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8975811847617040815, guid: 8206397988f81d5409c8f387df1ab07c,
         type: 3}
