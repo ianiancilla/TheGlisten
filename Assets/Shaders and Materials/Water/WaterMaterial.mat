@@ -49,6 +49,7 @@ Material:
     - Vector1_86B5B0D3: 0.1
     - _EnableExternalAlpha: 0
     m_Colors:
+    - Color_A1D6D213: {r: 0.20914918, g: 0.7525215, b: 0.8867924, a: 0.6117647}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
