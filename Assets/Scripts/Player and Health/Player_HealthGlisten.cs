@@ -7,7 +7,7 @@ public class Player_HealthGlisten : MonoBehaviour
 {
     // properties
     [SerializeField] float maxHealth = 10f;
-    [SerializeField] bool takesDamagePerSecond = true;
+    public bool takesDamagePerSecond = true;
     [SerializeField] float damagePerSecond = 1f;
 
     [Header("UI")]
