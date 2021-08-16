@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterMaterial
+  m_Name: WaterMaterial 1
   m_Shader: {fileID: -6465566751694194690, guid: d497d9cf8f9e2264eab037a2bfb1cc08,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_8B9B1758:
-        m_Texture: {fileID: 8400000, guid: 10039d7713c9acc49b38a09ab5d38485, type: 2}
+        m_Texture: {fileID: 8400000, guid: bd8a0639b5168ca4b9c864f2a2af9870, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_C9F72A04:
