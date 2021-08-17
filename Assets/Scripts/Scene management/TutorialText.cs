@@ -9,18 +9,31 @@ public class TutorialText : MonoBehaviour
     public GameObject textBoxImage;
     private bool displayText;
     public PlayerController player;
-    [SerializeField]
-        Player_HealthGlisten health;
+    [SerializeField] Player_HealthGlisten health;
+    [SerializeField] HorseDeath horseDeath;
+    public bool horse;
+    
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
         health = FindObjectOfType<Player_HealthGlisten>();
+        horseDeath = FindObjectOfType<HorseDeath>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (horse == true)
+        {
+            if (horseDeath.horseDeath == true)
+            {
+                displayText = true;
+                textBoxImage.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
+
         if (displayText)
         {
 
