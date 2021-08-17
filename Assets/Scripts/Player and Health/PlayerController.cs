@@ -46,9 +46,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
-       
-        // Moves the player left or right at a certain speed.
+
+        if (Input.GetKeyDown(KeyCode.G)) {
+
+            Time.timeScale = 0;
+        }
+            
+            
+            // Moves the player left or right at a certain speed.
 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");

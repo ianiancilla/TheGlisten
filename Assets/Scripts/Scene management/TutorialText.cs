@@ -28,10 +28,11 @@ public class TutorialText : MonoBehaviour
             textBox.text = tutorialText;
             if (Input.GetButtonDown("Jump"))
             {
-                textBoxImage.SetActive(false);
+               textBoxImage.SetActive(false);
                 Destroy(gameObject);
                 player.canMove = true;
                 health.takesDamagePerSecond = true;
+                Time.timeScale = 1;
             }
         }
     }
@@ -46,9 +47,9 @@ public class TutorialText : MonoBehaviour
             textBoxImage.SetActive(true);
             displayText=true;
             player.canMove = false;
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            health.takesDamagePerSecond = false;
-
+            //player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            //health.takesDamagePerSecond = false;
+            Time.timeScale = 0;
             
             }
         }
