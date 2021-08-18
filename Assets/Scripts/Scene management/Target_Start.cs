@@ -4,7 +4,8 @@ using UnityEngine;
 using Cinemachine;
 public class Target_Start : MonoBehaviour
 {
-   
+    [SerializeField] Player_HealthGlisten health;
+
     private Animator myAnim;
     public bool target;
     // Start is called before the first frame update
@@ -14,6 +15,8 @@ public class Target_Start : MonoBehaviour
         myAnim.SetBool("Target", true);
         Invoke("CameraPlayer", 2f);
         target = true;
+        health = FindObjectOfType<Player_HealthGlisten>();
+        health.takesDamagePerSecond = false;
     }
 
   
@@ -21,5 +24,6 @@ public class Target_Start : MonoBehaviour
     {
         myAnim.SetBool("Target", false);
         target = false;
+        health.takesDamagePerSecond = true;
     }
 }

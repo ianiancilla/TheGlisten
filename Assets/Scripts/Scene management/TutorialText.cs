@@ -39,18 +39,24 @@ public class TutorialText : MonoBehaviour
 
             textBox = FindObjectOfType<TextMeshProUGUI>();
             textBox.text = tutorialText;
-            if (Input.GetButtonDown("Jump"))
-            {
-               textBoxImage.SetActive(false);
-                Destroy(gameObject);
-                player.canMove = true;
-                health.takesDamagePerSecond = true;
-                Time.timeScale = 1;
-            }
+            Invoke("Continue", 1f);
+            
         }
     }
         
-
+    public void Continue()
+    {
+        Debug.Log("Hello World");
+        if (Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("Hello");
+            textBoxImage.SetActive(false);
+            Destroy(gameObject);
+            player.canMove = true;
+            health.takesDamagePerSecond = true;
+            Time.timeScale = 1;
+        }
+    }
        
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,9 +66,9 @@ public class TutorialText : MonoBehaviour
             textBoxImage.SetActive(true);
             displayText=true;
             player.canMove = false;
-            //player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            //health.takesDamagePerSecond = false;
-            Time.timeScale = 0;
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            health.takesDamagePerSecond = false;
+            //Time.timeScale = 0;
             
             }
         }
