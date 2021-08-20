@@ -12,6 +12,7 @@ public class TutorialText : MonoBehaviour
     [SerializeField] Player_HealthGlisten health;
     [SerializeField] HorseDeath horseDeath;
     public bool horse;
+    public GameObject continueText;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class TutorialText : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         health = FindObjectOfType<Player_HealthGlisten>();
         horseDeath = FindObjectOfType<HorseDeath>();
+        displayText = false;
     }
 
     // Update is called once per frame
@@ -28,34 +30,38 @@ public class TutorialText : MonoBehaviour
         {
             if (horseDeath.horseDeath == true)
             {
-                displayText = true;
+                //displayText = true;
                 textBoxImage.SetActive(true);
-                Time.timeScale = 0;
+                player.canMove = false;
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                health.takesDamagePerSecond = false;
+                textBox = FindObjectOfType<TextMeshProUGUI>();
+                textBox.text = tutorialText;
+                Invoke("Continue", 1f);
             }
         }
 
         if (displayText)
         {
-
-            textBox = FindObjectOfType<TextMeshProUGUI>();
-            textBox.text = tutorialText;
-            Invoke("Continue", 1f);
-            
+            continueText.SetActive(true);
+           
+            if (Input.GetButtonDown("Jump"))
+            {
+                
+                textBoxImage.SetActive(false);
+                Destroy(gameObject);
+                player.canMove = true;
+                health.takesDamagePerSecond = true;
+                continueText.SetActive(false);
+                displayText = false;
+            }
         }
     }
         
     public void Continue()
     {
-        Debug.Log("Hello World");
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("Hello");
-            textBoxImage.SetActive(false);
-            Destroy(gameObject);
-            player.canMove = true;
-            health.takesDamagePerSecond = true;
-            Time.timeScale = 1;
-        }
+        displayText = true;
+        
     }
        
 
@@ -64,13 +70,16 @@ public class TutorialText : MonoBehaviour
         if (collision.CompareTag("Player")){
 
             textBoxImage.SetActive(true);
-            displayText=true;
+            //displayText=true;
             player.canMove = false;
             player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             health.takesDamagePerSecond = false;
+            textBox = FindObjectOfType<TextMeshProUGUI>();
+            textBox.text = tutorialText;
+            Invoke("Continue", 1f);
             //Time.timeScale = 0;
-            
-            }
+
+        }
         }
             
             
