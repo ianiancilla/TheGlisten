@@ -11,7 +11,7 @@ public class Tutorial_Goal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("deactivateTextBox", 3f);
+        Invoke("deactivateTextBox", 5f);
     }
 
     // Update is called once per frame
