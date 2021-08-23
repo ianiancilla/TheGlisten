@@ -12,6 +12,7 @@ public class DemonController : MonoBehaviour
     public Transform homePosition;
     public float moveSpeed;
     private BoxCollider2D myBoxC;
+    private SFX_Manager sfx;
 
     PlayerController playerController;
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class DemonController : MonoBehaviour
         canMove = true;
         myBoxC = GetComponent<BoxCollider2D>();
         playerController = FindObjectOfType<PlayerController>();
+        sfx = FindObjectOfType<SFX_Manager>();
 
     }
 
@@ -60,6 +62,7 @@ public class DemonController : MonoBehaviour
                     myAnim.SetBool("AttackLeft", true);
                     canMove = false;
                     Invoke("StopAttackLeft", 2f);
+                    
 
                 }
 
@@ -69,6 +72,7 @@ public class DemonController : MonoBehaviour
                     myAnim.SetBool("AttackRight", true);
                     canMove = false;
                     Invoke("StopAttckRight", 2f);
+                   
                 }
             }
         }

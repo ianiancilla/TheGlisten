@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpOrb : MonoBehaviour
-{
-    [SerializeField] int yVelocity;
-    SFX_Manager sound;
+public class Yellow_Jump_Orb : MonoBehaviour
+{[SerializeField] int yVelocity;
     // Start is called before the first frame update
     void Start()
     {
-        sound = FindObjectOfType<SFX_Manager>();
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,10 +21,7 @@ public class JumpOrb : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<Rigidbody2D>().velocity = new Vector2(
-                  collision.GetComponent<Rigidbody2D>().velocity.x, yVelocity);
-            sound.whoosh.Play();
+                collision.GetComponent<Rigidbody2D>().velocity.x, yVelocity);
         }
     }
-
-
 }

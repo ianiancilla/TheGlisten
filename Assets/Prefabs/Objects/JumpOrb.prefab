@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4210595941774139024}
   - component: {fileID: 4210595941774139027}
   - component: {fileID: 4210595941774139029}
-  - component: {fileID: 681009766}
-  - component: {fileID: 681009768}
+  - component: {fileID: 297843443}
+  - component: {fileID: 297843439}
+  - component: {fileID: 297843440}
   m_Layer: 10
   m_Name: JumpOrb
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4210595941774139028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.11, y: -0.27, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 16.92, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,8 +106,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &681009766
-CircleCollider2D:
+--- !u!61 &297843443
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,25 +119,42 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.010179445}
+  m_Offset: {x: 0.0037364662, y: -0.017494917}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.49333334, y: 0.47}
+    newSize: {x: 2.96, y: 2.82}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.12015121
---- !u!253 &681009768
-BuoyancyEffector2D:
+  m_Size: {x: 0.1603533, y: 0.17841649}
+  m_EdgeRadius: 0
+--- !u!114 &297843439
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4210595941774139028}
   m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_SurfaceLevel: 0
-  m_Density: 80
-  m_LinearDrag: 5
-  m_AngularDrag: 5
-  m_FlowAngle: 0
-  m_FlowMagnitude: 0
-  m_FlowVariation: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0412e24eaed221d4c83e646a00921309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yVelocity: 0
+--- !u!114 &297843440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210595941774139028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7a0f172f9392c48999827ace87488f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yVelocity: 8
