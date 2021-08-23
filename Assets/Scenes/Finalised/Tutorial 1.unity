@@ -140,6 +140,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 163488757}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1024288367}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
       propertyPath: continueText
       value: 
       objectReference: {fileID: 640919109}
@@ -584,6 +594,18 @@ PrefabInstance:
       objectReference: {fileID: 914106156}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7486ce605a2c25e428ae7737cbf42de0, type: 3}
+--- !u!114 &163488757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 621838398, guid: 7486ce605a2c25e428ae7737cbf42de0,
+    type: 3}
+  m_PrefabInstance: {fileID: 163488756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &196785278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,9 +640,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 163488757}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
       propertyPath: horse
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1024288367}
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
       propertyPath: horseDeath
@@ -642,6 +674,16 @@ PrefabInstance:
       value: '"I... felt that. I only hope that whatever is left of that poor creature
         did not"'
       objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: damageTutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: damagePlayerTutorial
+      value: 
+      objectReference: {fileID: 612159097}
     - target: {fileID: 8911542169922845790, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
       propertyPath: m_Name
@@ -857,6 +899,16 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.028450608
       objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 163488757}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1024288367}
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
       propertyPath: continueText
@@ -1305,6 +1357,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 163488757}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1024288367}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
       propertyPath: continueText
       value: 
       objectReference: {fileID: 640919109}
@@ -1510,6 +1572,16 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.059328083
       objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 163488757}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1024288367}
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
       propertyPath: continueText
@@ -1996,6 +2068,16 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.1318904
       objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 163488757}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1024288367}
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
       propertyPath: continueText
@@ -7386,7 +7468,7 @@ PrefabInstance:
     - target: {fileID: 4883468669907654644, guid: 217d31af3df4f0d4d9cfdab45727d5b3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7875481
+      value: 6.8713455
       objectReference: {fileID: 0}
     - target: {fileID: 4883468669907654644, guid: 217d31af3df4f0d4d9cfdab45727d5b3,
         type: 3}

@@ -13,11 +13,12 @@ public class Ghost_Teleport_Script : MonoBehaviour
     Animator myAnim;
     private int teleportLocation;
     private Transform target;
-    private bool isCountingDown;
-    [SerializeField]
-    float moveSpeed;
+    public bool isCountingDown;
+    
+   public float moveSpeed;
     [SerializeField]
     float targetRange;
+    
 
 
     PlayerController playerController;
@@ -29,6 +30,7 @@ public class Ghost_Teleport_Script : MonoBehaviour
         myAnim = GetComponent<Animator>();
         target = FindObjectOfType<PlayerController>().transform;
         playerController = FindObjectOfType<PlayerController>();
+       
         
     }
 
