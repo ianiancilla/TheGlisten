@@ -479,6 +479,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green_Gas
       objectReference: {fileID: 0}
+    - target: {fileID: 1514698718018891595, guid: 65f47e5216d21504884246131f83eb1b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69960499577889646b6939fc6ae53567, type: 2}
     - target: {fileID: 1514698718018891597, guid: 65f47e5216d21504884246131f83eb1b,
         type: 3}
       propertyPath: m_RootOrder

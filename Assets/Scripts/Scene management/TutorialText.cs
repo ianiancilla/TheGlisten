@@ -44,6 +44,7 @@ public class TutorialText : MonoBehaviour
                 TutorialTextAppear();
                 Invoke("Continue", 1f);
 
+                //Stops the demon from moving when tutorial loads.
                 if (demonTutorial == true)
                 {
                     demon.GetComponent<BoxCollider2D>().enabled = false;
@@ -62,7 +63,6 @@ public class TutorialText : MonoBehaviour
 
             }
 
-
                 }
 
         //This code is for when the tutorial appears on the screen.
@@ -76,7 +76,7 @@ public class TutorialText : MonoBehaviour
                 {
                     ghost.moveSpeed = 2;
                 }
-
+                //This allows the demon to startt moving when the tutorial rext is closed.
                 if (demonTutorial == true)
                 {
                     demon.GetComponent<BoxCollider2D>().enabled = true;
@@ -85,7 +85,9 @@ public class TutorialText : MonoBehaviour
                 }
 
                 textBox.SetActive(false);
+                //Destroys the tutorial object so it wont load again.
                 Destroy(gameObject);
+                //Allows the player to move again.
                 player.canMove = true;
                 health.takesDamagePerSecond = true;
                 continueText.SetActive(false);
@@ -126,11 +128,13 @@ public class TutorialText : MonoBehaviour
         }
 
      void TutorialTextAppear()
-    {
+    {//Loads the tutorial text.
         textBox.SetActive(true);
+        //Stops the player from moving.
         player.canMove = false;
         player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().gravityScale = 0;
+        //Stops the oxygen gauge decreasing
         health.takesDamagePerSecond = false;
         text = FindObjectOfType<TextMeshProUGUI>();
         text.text = tutorialText;
