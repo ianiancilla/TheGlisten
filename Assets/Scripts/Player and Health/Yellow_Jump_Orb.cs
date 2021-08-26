@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Yellow_Jump_Orb : MonoBehaviour
-{[SerializeField] int yVelocity;
+{
+    [SerializeField] int waittime;
+    public GameObject gas;
+    
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (gas.activeSelf==false)
+        {
+            
+            Invoke("Reappear", waittime);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   private void Reappear()
     {
-        if (collision.CompareTag("Player"))
-        {
-            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(
-                collision.GetComponent<Rigidbody2D>().velocity.x, yVelocity);
-        }
+        gas.SetActive(true);
+        
     }
 }

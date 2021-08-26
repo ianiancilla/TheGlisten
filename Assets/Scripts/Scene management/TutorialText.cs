@@ -10,12 +10,14 @@ public class TutorialText : MonoBehaviour
     private bool displayText;
     public PlayerController player;
     [SerializeField] Player_HealthGlisten health;
-    public HorseDeath damagePlayerTutorial;
+    public TutorialDamage damagePlayerTutorial;
     public bool damageTutorial;
     public GameObject continueText;
     public bool ghostTutorial;
+    public bool demonTutorial;
         [SerializeField] Ghost_Teleport_Script ghost;
     public GameObject[] ghostList;
+    [SerializeField] DemonController demon;
    
 
     // Start is called before the first frame update
@@ -36,11 +38,18 @@ public class TutorialText : MonoBehaviour
         ghostList = GameObject.FindGameObjectsWithTag("Enemy");
         if (damageTutorial == true)
         {
-            if (damagePlayerTutorial.horseDeath == true)
+            if (damagePlayerTutorial.damage == true)
             {
                 
                 TutorialTextAppear();
                 Invoke("Continue", 1f);
+
+                if (demonTutorial == true)
+                {
+                    demon.GetComponent<BoxCollider2D>().enabled = false;
+                    demon.canMove = false;
+                    player.GetComponent<CapsuleCollider2D>().enabled = false;
+                }
             }
         }
         //This will activate when the ghost is in range and starts following the Player.
@@ -67,7 +76,14 @@ public class TutorialText : MonoBehaviour
                 {
                     ghost.moveSpeed = 2;
                 }
-                
+
+                if (demonTutorial == true)
+                {
+                    demon.GetComponent<BoxCollider2D>().enabled = true;
+                    demon.canMove = true;
+                    player.GetComponent<CapsuleCollider2D>().enabled = true;
+                }
+
                 textBox.SetActive(false);
                 Destroy(gameObject);
                 player.canMove = true;
@@ -96,8 +112,15 @@ public class TutorialText : MonoBehaviour
         if (collision.CompareTag("Player")){
 
             TutorialTextAppear();
-            Invoke("Continue", 1f);
-            
+            Invoke("Continue", 2f);
+
+            if (demonTutorial == true)
+            {
+                demon.GetComponent<BoxCollider2D>().enabled = false;
+                demon.canMove = false;
+                player.GetComponent<CapsuleCollider2D>().enabled = false;
+            }
+
 
         }
         }

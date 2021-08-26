@@ -7,12 +7,13 @@ public class DemonController : MonoBehaviour
     private Transform target;
     public float attackRange;
     private Animator myAnim;
-    private bool canMove;
+    public bool canMove;
     public float moveRange;
     public Transform homePosition;
     public float moveSpeed;
     private BoxCollider2D myBoxC;
     private SFX_Manager sfx;
+    public bool following;
 
     PlayerController playerController;
     // Start is called before the first frame update
@@ -95,6 +96,7 @@ public class DemonController : MonoBehaviour
     }
     public void FollowPlayer()
     {
+        following = true;
         myAnim.SetFloat("MoveX", target.position.x - transform.position.x);
         myAnim.SetFloat("MoveY", target.position.y - transform.position.y);
         transform.position = Vector3.MoveTowards(transform.position,
@@ -102,6 +104,7 @@ public class DemonController : MonoBehaviour
     }
     public void GoHome()
     {
+        following = false;
         myAnim.SetFloat("MoveX", homePosition.position.x - transform.position.x);
         myAnim.SetFloat("MoveY", homePosition.position.y - transform.position.y);
         transform.position = Vector3.MoveTowards(transform.position, homePosition.transform.position, moveSpeed * Time.deltaTime);

@@ -94,7 +94,7 @@ public class Player_HealthGlisten : MonoBehaviour
         }
     }
 
-    private void SpawnHealthDrops(int numberOfDrops)
+    public void SpawnHealthDrops(int numberOfDrops)
     {
         float angleOfVelocity = 180f / (numberOfDrops + 1);
 
