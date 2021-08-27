@@ -27,8 +27,9 @@ public class PlayerController : MonoBehaviour
     public bool victory;
     public GameObject flame;
     [SerializeField] LayerMask platformLayerMask;
-   
-        // Start is called before the first frame update
+    [SerializeField] Player_HealthGlisten health;
+
+    // Start is called before the first frame update
     void Start()
     {
         myRgbdy = gameObject.GetComponent<Rigidbody2D>();
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
         Invoke("Move", 2f);
         sfxManager = FindObjectOfType<SFX_Manager>();
         victory = true;
-      
+        health = FindObjectOfType<Player_HealthGlisten>();
 
     }
     
@@ -126,6 +127,7 @@ public class PlayerController : MonoBehaviour
             victory = true;
             Invoke("NextLevel", 2f);
             flame.GetComponent<SpriteRenderer>().flipX = true;
+            health.takesDamagePerSecond = false;
         }
     }
 

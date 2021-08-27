@@ -18,6 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Finalised/Cutscene.unity
     guid: 125ba0c4fcc2735439d0e2e436326a24
   - enabled: 1
+    path: Assets/Scenes/Finalised/Tutorial 1.unity
+    guid: 9a8ab6665cbe5de47ad05b9b7be13406
+  - enabled: 1
+    path: Assets/Scenes/Finalised/Tutorial 2.unity
+    guid: 251241f4ec9d97a47bcbf248f6fa01e5
+  - enabled: 1
+    path: Assets/Scenes/Finalised/Tutorial 3.unity
+    guid: d27fd6ae89480474ca3a985f18d7e8ca
+  - enabled: 1
     path: Assets/Scenes/Finalised/Test2.unity
     guid: 40fd499d74cd2654eb86998790ed6963
   - enabled: 1
