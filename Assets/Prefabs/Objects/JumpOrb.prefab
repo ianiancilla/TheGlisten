@@ -366,6 +366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waittime: 4
   gas: {fileID: 153194543}
+  invisibleLength: 4
+  isCountingDown: 0
 --- !u!1 &8400977090321144058
 GameObject:
   m_ObjectHideFlags: 0

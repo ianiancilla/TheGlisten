@@ -6,17 +6,35 @@ public class Yellow_Jump_Orb : MonoBehaviour
 {
     [SerializeField] int waittime;
     public GameObject gas;
-    
+   public float invisibleLength;
+    private float invisibleLengthCounter;
+    public bool isCountingDown;
+
     // Start is called before the first frame update
-    
+    private void Start()
+    {
+        invisibleLengthCounter = invisibleLength;
+        isCountingDown = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (gas.activeSelf==false)
-        {
+        if (gas.activeSelf == false) {
+            isCountingDown = true;
+        }
+        
+        if (isCountingDown)
+            {
+                invisibleLengthCounter -= Time.deltaTime;
+            }
+
+        if (invisibleLengthCounter <= 0) { 
+        
+            gas.SetActive(true);
+            isCountingDown = false;
+            invisibleLengthCounter = invisibleLength;
             
-            Invoke("Reappear", waittime);
         }
     }
 
