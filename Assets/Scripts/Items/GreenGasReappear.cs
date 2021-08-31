@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Yellow_Jump_Orb : MonoBehaviour
+public class GreenGasReappear : MonoBehaviour
 {
     [SerializeField] int waittime;
     public GameObject gas;
