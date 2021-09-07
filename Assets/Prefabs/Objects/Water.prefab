@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378335218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 2.05, z: -14.399129}
-  m_LocalScale: {x: 1, y: 1, z: 0.83}
+  m_LocalPosition: {x: 0.03, y: 0.71, z: -14.399129}
+  m_LocalScale: {x: 1.31, y: 1, z: 0.83}
   m_Children: []
   m_Father: {fileID: 7110658892603312491}
   m_RootOrder: 0
@@ -60,7 +60,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.4914665
+  orthographic size: 5.2411957
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -83,7 +83,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378335218}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &378335220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +140,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975238431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.010000229, y: -0.87000084, z: 0}
-  m_LocalScale: {x: 2.9, y: -0.5, z: 1}
+  m_LocalPosition: {x: -0, y: -0.791, z: 0}
+  m_LocalScale: {x: 2.88, y: -0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 7110658892603312491}
   m_RootOrder: 1
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8424440984708d48b27bf592b322e38, type: 2}
+  - {fileID: 2100000, guid: 46b821c69d8a2c94bb81fbaa5de0d1cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 7110658892603312406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.88, y: -12.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.01, y: 5.55, z: 1}
   m_Children:
   - {fileID: 378335219}
   - {fileID: 1975238432}
@@ -250,7 +250,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8378d4fdfd31d284e92f07d8f93334e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -292,7 +292,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.7533493}

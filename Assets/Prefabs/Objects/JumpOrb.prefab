@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 6681831063386143182}
   - component: {fileID: 6477746443102915735}
   m_Layer: 10
-  m_Name: C2011
+  m_Name: Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,6 +16,7 @@ public class SFX_Manager : MonoBehaviour
     public AudioSource ghostNoise;
     public AudioSource whoosh;
     public AudioSource flameAttack;
+    public AudioSource wizardAppear;
     // Start is called before the first frame update
     void Start()
     {
