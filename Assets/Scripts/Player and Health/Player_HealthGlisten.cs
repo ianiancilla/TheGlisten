@@ -89,7 +89,7 @@ public class Player_HealthGlisten : MonoBehaviour
             flameAnimation.AnimateDamage();
 
             // spawn a HealthDrop for each point of damage taken, and make them fly off like Sonic rings
-            int numberOfDrops = (int)damageTaken;
+            int numberOfDrops =2* (int)damageTaken;
             SpawnHealthDrops(numberOfDrops);
         }
     }

@@ -47,7 +47,9 @@ public class HorseController : MonoBehaviour
         {
             left = false; 
         }
+
+        
+        }
     }
 
 
-}

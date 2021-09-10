@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yVelocity: 8
-  amount: 50
+  amount: 3
 --- !u!1 &4210595941774139028
 GameObject:
   m_ObjectHideFlags: 0

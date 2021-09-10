@@ -17,6 +17,7 @@ public class SFX_Manager : MonoBehaviour
     public AudioSource whoosh;
     public AudioSource flameAttack;
     public AudioSource wizardAppear;
+    public AudioSource WizardLaugh;
     // Start is called before the first frame update
     void Start()
     {

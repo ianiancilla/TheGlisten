@@ -63,9 +63,8 @@ public class PlayerController : MonoBehaviour
                 myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, jumpForce);
                 jumpTimeCounter = jumpTime;
                 isJumping = true;
-                
-                sfxManager.jump.Play();
-                
+                //Plays the jump sound effect.
+                sfxManager.jump.Play();     
         }
 
             if (Input.GetButton("Jump") && isJumping == true){
@@ -79,46 +78,15 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonUp("Jump")){
                 isJumping = false;
             }
-            // Makes the player able to climb ladders
-            if (climbing == true)
-            {
-                myRgbdy.velocity = new Vector2(myRgbdy.velocity.x, vertical * Time.deltaTime * climbSpeed);
-            }
+            
         }
-    }
-
-    private void FixedUpdate()
-    {
-        if (climbing == true)
-        {
-            //Remove Gravity so the player does not instantly fall while climbing.
-            myRgbdy.gravityScale = 0f;
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {//detects when the player is next to a ladder.
-        if (collision.CompareTag("Ladder"))
-        {
-            climbing = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Ladder"))
-        {//Remove climbing and turn gravity for the player back on.
-            climbing = false;
-            myRgbdy.gravityScale = 1f;
-        }
-
-      
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {//What will happen if the player reaches the target. The countown stops, they cant move,
         //The game object they touch disappears. The next level loads.
         if (collision.CompareTag("Target"))
-        {
+        {//Turns off a lot of settings when the player reaches the goal and loads the next level.
             myRgbdy.velocity = Vector2.zero;
             gameOver.alarmWhenLowHealth = false;
             canMove = false;
@@ -138,13 +106,13 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {//Allows the player to move after the camera has finished focusing on the goal.
-        canMove = true;
+       
         gameOver.alarmWhenLowHealth = true;
         victory = false;
     }
 
    private bool isGrounded()
-    {
+    {//Calculates when the player is standing on top of a platform.
         
         CapsuleCollider2D circleCollider2D = GetComponent<CapsuleCollider2D>();
         
