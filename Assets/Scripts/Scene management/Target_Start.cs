@@ -8,6 +8,7 @@ public class Target_Start : MonoBehaviour
 
     private Animator myAnim;
     public bool target;[SerializeField] int waitTime;
+    [SerializeField] PlayerController pc;
     // Start is called before the first frame update
     void Start()
     {//Makes the caamera focus on the goal at the start of every level.
@@ -16,6 +17,7 @@ public class Target_Start : MonoBehaviour
         Invoke("CameraPlayer",waitTime);
         target = true;
         health = FindObjectOfType<Player_HealthGlisten>();
+        pc = FindObjectOfType<PlayerController>();
         health.takesDamagePerSecond = false;
     }
 
@@ -25,5 +27,6 @@ public class Target_Start : MonoBehaviour
         myAnim.SetBool("Target", false);
         target = false;
         health.takesDamagePerSecond = true;
+        pc.canMove = true;
     }
 }
