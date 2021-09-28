@@ -19,7 +19,7 @@ public class WorldMap : MonoBehaviour
     }
 
     private void NextLevel()
-    {//Loads the next lecel of the game.
+    {//Loads the next level of the game.
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

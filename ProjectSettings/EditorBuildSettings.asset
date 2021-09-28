@@ -21,61 +21,61 @@ EditorBuildSettings:
     path: Assets/World_Map.unity
     guid: 61e01e1d47d4c3d44bfb4ca9574c4aa3
   - enabled: 1
-    path: Assets/Scenes/Finalised/Tutorial 1.unity
+    path: Assets/Scenes/Finalised/Level1.unity
     guid: 9a8ab6665cbe5de47ad05b9b7be13406
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap2.unity
     guid: 90bff36cc28c4b2408039c679996d98b
   - enabled: 1
-    path: Assets/Scenes/Finalised/Tutorial 2.unity
+    path: Assets/Scenes/Finalised/Level2.unity
     guid: 251241f4ec9d97a47bcbf248f6fa01e5
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap3.unity
     guid: 24ff4366312090a4ca3781b36547e0b6
   - enabled: 1
-    path: Assets/Scenes/Finalised/Tutorial 3.unity
+    path: Assets/Scenes/Finalised/Level3.unity
     guid: d27fd6ae89480474ca3a985f18d7e8ca
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap4.unity
     guid: 21349aeb5c403c2409766debf5df300a
   - enabled: 1
-    path: Assets/Scenes/Finalised/Test4.unity
+    path: Assets/Scenes/Finalised/Level4.unity
     guid: f830d4c5ed1df304eb3c4cbf38d0e4e3
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap5.unity
     guid: 47d9c97c0a7fc7b40908791b237e80f6
   - enabled: 1
-    path: Assets/Scenes/Finalised/Test3.unity
+    path: Assets/Scenes/Finalised/Level5.unity
     guid: b4657e7a197e1bf448ec32059ce627a1
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap6.unity
     guid: aa9b2ed4b6ab43644a13b57903556ab8
   - enabled: 1
-    path: Assets/Scenes/Finalised/RisingWaterLevel.unity
+    path: Assets/Scenes/Finalised/Level6.unity
     guid: d02e07d09369c374080856e5751b4f25
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap7.unity
     guid: 1d989fb4684050343855cdab6d385654
   - enabled: 1
-    path: Assets/Scenes/Finalised/Test2.unity
+    path: Assets/Scenes/Finalised/Level7.unity
     guid: 40fd499d74cd2654eb86998790ed6963
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap8.unity
     guid: 7532a68842f004f48b5ec7a4e1d9fdda
   - enabled: 1
-    path: Assets/Scenes/Finalised/Test5.unity
+    path: Assets/Scenes/Finalised/Level8.unity
     guid: c8683cc3daf8e5c4699254ffeb0af70d
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap9.unity
     guid: 03e1c8559e25fc54082c71070cfc0116
   - enabled: 1
-    path: Assets/Scenes/Finalised/Test6.unity
+    path: Assets/Scenes/Finalised/Level9.unity
     guid: 2bede67cc06b5424faed749892c5ba87
   - enabled: 1
     path: Assets/Scenes/Finalised/WorldMap10.unity
     guid: 1670d08651b03894caa622e11f084712
   - enabled: 1
-    path: Assets/Scenes/Finalised/BossBattle.unity
+    path: Assets/Scenes/Finalised/Level10.unity
     guid: 28e6b1bbf52e5cc4ea67e90766e43a70
   - enabled: 1
     path: Assets/Scenes/Finalised/Cutscene_Outro.unity
