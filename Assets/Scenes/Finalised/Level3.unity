@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1425,7 +1425,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1955,8 +1955,7 @@ PrefabInstance:
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
       propertyPath: tutorialText
-      value: It doesn't get hurt. How can I defeat such a demon? I don't think I
-        can...I should run.
+      value: It doesn't get hurt. How can I defeat such a demon? ...I should run.
       objectReference: {fileID: 0}
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
@@ -4291,6 +4290,126 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1585921750}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1637872175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2079063348}
+    m_Modifications:
+    - target: {fileID: 8911542169922845788, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.839592
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845788, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.23940651
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845788, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.80574477
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845788, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.12167346
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 627699476}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 382095720}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: continueText
+      value: 
+      objectReference: {fileID: 165469327}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: textBoxImage
+      value: 
+      objectReference: {fileID: 382095720}
+    - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: tutorialText
+      value: The Cave ahead looks much larger. The real adventure now begins!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845790, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_Name
+      value: Tutorial_End
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.543019
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9, type: 3}
+--- !u!4 &1637872176 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8911542169922845791, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1637872175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1715274580
 GameObject:
   m_ObjectHideFlags: 0
@@ -5398,6 +5517,7 @@ Transform:
   m_Children:
   - {fileID: 1154219881}
   - {fileID: 1305021103}
+  - {fileID: 1637872176}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

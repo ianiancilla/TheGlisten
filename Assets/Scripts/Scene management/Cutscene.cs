@@ -7,18 +7,19 @@ public class Cutscene : MonoBehaviour
 {
     public bool intro;
     public bool outro;
+    public float time;
     private const string titleScreen = "TitleScreen";
     // Start is called before the first frame update
     void Start()
     {
         if (intro)
         {
-            Invoke("StartGame", 14f);
+            Invoke("StartGame", time);
         }
 
         if (outro)
         {
-            Invoke("EndGame", 13f);
+            Invoke("EndGame", time);
         }
     }
 
