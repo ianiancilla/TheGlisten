@@ -22,7 +22,7 @@ public class Tutorial_Goal : MonoBehaviour
     {
         //Closes the text box and allows the player to move.
         textBox.SetActive(false);
-        image.SetActive(true);
+        //image.SetActive(true);
         pc.canMove = true;
     }
 }

@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50, y: 0}
+  m_AnchoredPosition: {x: -338, y: 0}
   m_SizeDelta: {x: 361.59863, y: 107.3186}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &44881938
@@ -2072,7 +2072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fire sounds
+  m_text: Sounds and Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2414,7 +2414,14 @@ MonoBehaviour:
 
     https://freesound.org/people/EminYILDIRIM/sounds/544634/?fbclid=IwAR1G211YWlT6LdSWJa1DlA-O7D-Bjs6XVY7UcHnfg-6sv_4RptEjyfeLukw
 
-    https://opengameart.org/content/fire-evil-spell?fbclid=IwAR2rS1OPhYoEaV84IXU75LPF3Yg4Jjd-Ox-0vl2IL6pD4pDF4Tn5Y6AtgSw'
+    https://opengameart.org/content/fire-evil-spell?fbclid=IwAR2rS1OPhYoEaV84IXU75LPF3Yg4Jjd-Ox-0vl2IL6pD4pDF4Tn5Y6AtgSw
+
+    All
+    Music by Russel Brown.
+
+    https://soundcloud.com/cd-32
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
