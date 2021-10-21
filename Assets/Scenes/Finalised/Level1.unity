@@ -922,8 +922,8 @@ PrefabInstance:
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
       propertyPath: tutorialText
-      value: '"Is that a horse?! Or at least, I think it was once a horse. What has
-        he done to you my four legged friend?"'
+      value: '"Is that a horse?! I think it was once... What has he done to you my
+        four legged friend?"'
       objectReference: {fileID: 0}
     - target: {fileID: 8911542169922845790, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
@@ -7666,7 +7666,7 @@ PrefabInstance:
     - target: {fileID: 4883468669907654644, guid: 217d31af3df4f0d4d9cfdab45727d5b3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.394512
+      value: 1.7932472
       objectReference: {fileID: 0}
     - target: {fileID: 4883468669907654644, guid: 217d31af3df4f0d4d9cfdab45727d5b3,
         type: 3}
