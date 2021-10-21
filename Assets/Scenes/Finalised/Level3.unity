@@ -4390,7 +4390,7 @@ PrefabInstance:
     - target: {fileID: 8911542169922845789, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
         type: 3}
       propertyPath: tutorialText
-      value: The cave ahead looks much larger. Let's see hoiw deep the rabbit hole
+      value: The cave ahead looks much larger. Let's see how deep the rabbit hole
         goes!
       objectReference: {fileID: 0}
     - target: {fileID: 8911542169922845790, guid: 1d8042d7baf7d8a428a0a06c5eaba9f9,
