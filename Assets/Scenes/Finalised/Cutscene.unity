@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1903,6 +1903,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1710363298516451978, guid: 319f39e20858ac948886c73d480b044b,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2676785724647748968, guid: 319f39e20858ac948886c73d480b044b,
         type: 3}
       propertyPath: m_RootOrder
@@ -2017,7 +2022,7 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 8777882983584764585, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
     value: {fileID: 0}
-  - key: {fileID: 8912716484004280537, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 3592136255463460897, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
     value: {fileID: 0}
@@ -2032,6 +2037,8 @@ PlayableDirector:
   - key: {fileID: -2563999475571951181, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
     value: {fileID: 0}
   - key: {fileID: 4715248049985936454, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5954381183773607196, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
@@ -2290,12 +2297,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8467666627835144012, guid: 96f61ff4981e1b444b72a6565cbadcc8,
     type: 3}
   m_PrefabInstance: {fileID: 851367471}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &977549500 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 946366250928506915, guid: 0db29668f1fb4af4da3c038150ae7354,
-    type: 3}
-  m_PrefabInstance: {fileID: 1152373568}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1030563834
 PrefabInstance:
@@ -20979,8 +20980,6 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 8777882983584764585, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
     value: {fileID: 0}
-  - key: {fileID: 8912716484004280537, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
-    value: {fileID: 977549500}
   - key: {fileID: 3592136255463460897, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
     value: {fileID: 530811409}
   - key: {fileID: 5821509737340169287, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
