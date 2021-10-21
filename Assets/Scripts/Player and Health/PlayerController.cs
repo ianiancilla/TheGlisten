@@ -96,6 +96,8 @@ public class PlayerController : MonoBehaviour
             Invoke("NextLevel", 2f);
             flame.GetComponent<SpriteRenderer>().flipX = true;
             health.takesDamagePerSecond = false;
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
     }
 

@@ -20996,6 +20996,10 @@ PlayableDirector:
     value: {fileID: 537509846}
   - key: {fileID: -5954381183773607196, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
     value: {fileID: 1241906473}
+  - key: {fileID: 5816059100492323430, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5426128675287220900, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &2141829128
@@ -21026,7 +21030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intro: 1
   outro: 0
-  time: 33
+  time: 38
 --- !u!4 &5007970800372098186
 Transform:
   m_ObjectHideFlags: 0
