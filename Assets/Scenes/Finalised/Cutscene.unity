@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2038,6 +2038,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 4715248049985936454, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -5954381183773607196, guid: ffd125acf5623b04eacbcd2f84d2b31c, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &850156888
@@ -2135,8 +2137,8 @@ PrefabInstance:
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
       propertyPath: m_text
-      value: "Perhaps now you will understand \nit is better for such a primitive
-        being to follow rather than lead!\r\n"
+      value: "Perhaps now you will understand \nit is better for such a simpleton
+        to follow rather than lead!\r"
       objectReference: {fileID: 0}
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
@@ -19729,8 +19731,8 @@ PrefabInstance:
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
       propertyPath: m_text
-      value: 'Those you love and those you hate will be equally tortured by your
-        very presence. '
+      value: 'Those you love and those you hate will be equally hurt by your very
+        presence. '
       objectReference: {fileID: 0}
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
@@ -19910,7 +19912,7 @@ PrefabInstance:
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
       propertyPath: m_text
-      value: 'Everything you touch, you will comdemn to the purest form of destruction. '
+      value: 'Everything you touch, you will subject to the purest form of destruction. '
       objectReference: {fileID: 0}
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
@@ -20771,7 +20773,7 @@ PrefabInstance:
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
       propertyPath: m_text
-      value: "Wizard Show your self! \nStop Hiding!"
+      value: "Wizard! Where are you hiding?\nShow yourself coward! \n"
       objectReference: {fileID: 0}
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
