@@ -1216,7 +1216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621838398, guid: 7486ce605a2c25e428ae7737cbf42de0, type: 3}
       propertyPath: m_text
-      value: Impossible, how did she find me, my powers are fading.
+      value: Impossible, how did she find me. My powers are fading...
       objectReference: {fileID: 0}
     - target: {fileID: 53073915309715474, guid: 7486ce605a2c25e428ae7737cbf42de0,
         type: 3}
@@ -18005,7 +18005,7 @@ PrefabInstance:
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
       propertyPath: m_text
-      value: I did it! The curse is lifted and the Wizard is gone Forever!
+      value: I did it! The curse is lifted and the wizard is gone forever!
       objectReference: {fileID: 0}
     - target: {fileID: 8467666627247138893, guid: 96f61ff4981e1b444b72a6565cbadcc8,
         type: 3}
